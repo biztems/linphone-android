@@ -9,7 +9,7 @@ contributions made to this fork.
 ## The permission
 
 The copyright holders of the modifications and contributions in this
-repository — biztems (biztems.it), and each contributor for their own
+repository — Biztems SRL (biztems.it), and each contributor for their own
 contribution — grant the following additional permission for those
 modifications and contributions:
 
