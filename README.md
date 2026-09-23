@@ -1,3 +1,12 @@
+> **biztems fork.** This repository is biztems' fork of
+> [Linphone for Android](https://github.com/BelledonneCommunications/linphone-android)
+> by Belledonne Communications, under the GNU GPL version 3. The `biztems`
+> branch starts from Linphone 6.2.7; biztems' modifications begin in September
+> 2026 and are listed in that branch's history. They, and contributions to this
+> fork, carry the additional permission in
+> [APPSTORE-EXCEPTION.md](APPSTORE-EXCEPTION.md). To contribute, see
+> [CONTRIBUTING.md](CONTRIBUTING.md).
+
 
 [![pipeline status](https://gitlab.linphone.org/BC/public/linphone-android/badges/master/pipeline.svg)](https://gitlab.linphone.org/BC/public/linphone-android/commits/master) 
 [![weblate status](https://weblate.linphone.org/widget/linphone/linphone-android-6-0/status-badge.png)](https://weblate.linphone.org/engage/linphone/)
