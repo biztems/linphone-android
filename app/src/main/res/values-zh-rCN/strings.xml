@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE resources [
-<!ENTITY appName "Linphone">
+<!ENTITY appName "BizVoIP">
 ]>
 <resources>
     <string name="content_description_schedule_meeting">安排会议</string>
@@ -102,10 +102,7 @@
     <string name="notification_keep_app_alive_message">点击打开</string>
     <string name="welcome_page_title">欢迎</string>
     <string name="welcome_page_subtitle">在&appName;</string>
-    <string name="welcome_page_2_title">安全</string>
-    <string name="welcome_page_2_message">通讯是 <b>端对端 </b>安全的。</string>
     <string name="welcome_page_3_title">开源</string>
-    <string name="welcome_page_3_message">一款 <b>自由</b>、开源应用，自 <b>2001</b>。</string>
     <string name="sip_address_copied_to_clipboard_toast">SIP地址已复制到剪贴板</string>
     <string name="new_account_configured_toast">新账户已配置</string>
     <string name="file_successfully_exported_to_media_store_toast">文件已经导出到本地相册</string>
@@ -122,7 +119,6 @@
     <string name="assistant_dialog_confirm_phone_number_message">您确定您的电话号码是%s吗？</string>
     <string name="assistant_account_login">登录</string>
     <string name="assistant_scan_qr_code">扫描二维码</string>
-    <string name="assistant_login_third_party_sip_account">使用第三方SIP账户</string>
     <string name="assistant_login_third_party_sip_account_title">第三方SIP账户</string>
     <string name="assistant_login_using_single_sign_on">单点登录</string>
     <string name="assistant_login_cant_parse_address_toast">SIP地址无效！</string>
@@ -149,7 +145,6 @@
     <string name="assistant_already_have_an_account">已经有账户了？</string>
     <string name="drawer_menu_account_connection_status_progress">正在连接…</string>
     <string name="help_about_privacy_policy_subtitle">什么信息&appName;收集和使用</string>
-    <string name="help_about_contribute_translations_title">在&appName;上投稿翻译</string>
     <string name="drawer_menu_account_connection_status_connected">已连接</string>
     <string name="drawer_menu_account_connection_status_refreshing">正在刷新</string>
     <string name="drawer_menu_account_connection_status_cleared">已禁用</string>
@@ -773,7 +768,6 @@
     <string name="settings_advanced_enable_auto_answer_incoming_calls_after_delay_title">自动应答呼叫前的延迟</string>
     <string name="history_dialog_delete_call_logs_title">您真的要删除与该人的历史记录吗？</string>
     <string name="assistant_dialog_general_terms_and_privacy_policy_title">通用条款和隐私政策</string>
-    <string name="welcome_page_1_message">一款 <b>安全</b>、<b>开源</b> 、<b>法国</b> 通讯应用app。</string>
     <string name="drawer_menu_manage_account">管理个人资料</string>
     <string name="settings_advanced_use_smff_format_for_call_recordings_subtitle">将使用专有文件格式</string>
     <string name="help_version_up_to_date_toast_message">版本是最新的</string>
@@ -810,8 +804,6 @@
     <string name="conversation_info_no_address_to_add_to_contact_toast">没有地址要添加到联系人</string>
     <string name="conversation_event_ephemeral_messages_lifetime_changed">阅后即焚消息生命周期现在是%s</string>
     <string name="full_screen_intent_permission_not_granted">未授予显示来电权限！</string>
-    <string name="help_about_user_guide_subtitle">逐步学习如何掌握所有应用程序功能。</string>
-    <string name="help_about_user_guide_title">&appName; 用户指南</string>
     <string name="help_about_contribute_translations_subtitle">帮助尽可能多的人访问应用程序。</string>
     <string name="help_troubleshooting_subtitle">传输您的诊断日志以促进错误解决。</string>
     <string name="content_description_cancel_files_or_text_pending_sharing">单击可取消待共享的文件或文本</string>

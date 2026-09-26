@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE resources [
-<!ENTITY appName "Linphone">
+<!ENTITY appName "BizVoIP">
 ]>
 <resources>
     <string name="sip_address">SIP adresa</string>
@@ -19,7 +19,6 @@
     </plurals>
     <string name="assistant_qr_code_invalid_toast">Neplatný QR kód!</string>
     <string name="assistant_login_address_without_username_toast">SIP adrese neobsahuje uživatelské jméno!</string>
-    <string name="help_about_contribute_translations_title">Příspět do překladu &appName;</string>
     <string name="help_troubleshooting_print_logs_in_logcat">Zapisovat logy do Logcatu</string>
     <string name="settings_security_enable_vfs_dialog_confirmation_message">Po aktivaci bude nutné aplikaci restartovat.\nPoté budou všechna data aplikace šifrována a přístupná pouze přes aplikaci.\n\nBuďte opatrní, tento krok je nevratný!</string>
     <string name="conversation_ephemeral_messages_duration_one_week">1 týden</string>
@@ -30,7 +29,6 @@
     <string name="call_error_user_not_found_toast">Uživatel nebyl nalezen</string>
     <string name="conference_failed_to_add_participant_invalid_address_toast">Neplatná SIP adresa, nelze přidat do konference</string>
     <string name="dialog_install">Instalovat</string>
-    <string name="welcome_page_2_message">Vaše komunikace je bezpečná díky našemu <b>koncovému šifrování</b>.</string>
     <string name="remote_provisioning_config_failed_toast">Došlo k chybě při pokusu o stažení a použití vzdálené konfigurace</string>
     <string name="assistant_third_party_sip_account_warning_explanation">Některé funkce jako skupinové zprávy nebo videokonference vyžadují účet &appName;\n\nTyto funkce jsou skryté, pokud se zaregistrujete pomocí SIP účtu třetí strany.\n\nPro aktivaci v komerčním projektu nás prosím kontaktujte.</string>
     <string name="assistant_permissions_subtitle">Pro plné využívání &appName; potřebujeme, abyste nám udělili následující oprávnění:</string>
@@ -184,10 +182,7 @@
     <string name="notification_keep_app_alive_message">Klepněte pro otevření</string>
     <string name="welcome_page_title">Vítejte</string>
     <string name="welcome_page_subtitle">v &appName;</string>
-    <string name="welcome_page_1_message"><b>Bezpečná</b>, <b> otevřená</b> a<b> Francouzská</b> komunikační aplikace.</string>
-    <string name="welcome_page_2_title">Zabezpečená</string>
     <string name="welcome_page_3_title">Otevřená</string>
-    <string name="welcome_page_3_message"><b>Bezplatná</b> a otevřená aplikace od roku <b>2001</b>.</string>
     <string name="sip_address_copied_to_clipboard_toast">SIP adresa zkopírována do schránky</string>
     <string name="new_account_configured_toast">Nový účet byl nastaven</string>
     <string name="file_successfully_exported_to_media_store_toast">Soubor byl exportován do systémové galerie</string>
@@ -203,7 +198,6 @@
     <string name="assistant_dialog_confirm_phone_number_message">Jste si jistý(á), že vaše telefonní číslo je %s?</string>
     <string name="assistant_account_login">Přihlásit se</string>
     <string name="assistant_scan_qr_code">Naskenovat QR kód</string>
-    <string name="assistant_login_third_party_sip_account">Použít SIP účet třetí strany</string>
     <string name="assistant_login_third_party_sip_account_title">SIP účet třetí strany</string>
     <string name="assistant_login_using_single_sign_on">Jednotné přihlášení (SSO)</string>
     <string name="assistant_login_cant_parse_address_toast">Neplatná SIP adresa!</string>
@@ -829,8 +823,6 @@
     <string name="contacts_list_sip_empty">Momentálně žádný SIP kontakt…</string>
     <string name="contacts_change_filter_label">Změnit filtr</string>
     <string name="help_about_contribute_translations_subtitle">Pomozte zpřístupnit aplikaci co největšímu počtu lidí.</string>
-    <string name="help_about_user_guide_title">Průvodce &appName;</string>
-    <string name="help_about_user_guide_subtitle">Naučte se krok za krokem ovládat všechny funkce aplikace.</string>
     <string name="help_troubleshooting_subtitle">Předejte své diagnostické protokoly, abyste usnadnili řešení chyb.</string>
     <string name="content_description_cancel_files_or_text_pending_sharing">Kliknutím zrušíte soubory nebo text čekající na sdílení</string>
     <string name="settings_contacts_ldap_enabled_title">Zapnuto</string>

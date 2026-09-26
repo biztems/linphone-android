@@ -68,6 +68,38 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"/>
 
+                <ImageView
+                    android:id="@+id/sip_only_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="72dp"
+                    android:layout_marginTop="30dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@null"
+                    android:src="@drawable/bizvoip_logo_mono"
+                    android:visibility="@{viewModel.hideLinphoneAccountLogin ? View.VISIBLE : View.GONE, default=gone}"
+                    app:tint="?attr/color_main1_500"
+                    app:layout_constraintTop_toBottomOf="@id/title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/default_text_style"
+                    android:id="@+id/sip_only_message"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="center"
+                    android:text="@string/assistant_sip_only_login_message"
+                    android:textSize="14sp"
+                    android:textColor="?attr/color_main2_500"
+                    android:visibility="@{viewModel.hideLinphoneAccountLogin ? View.VISIBLE : View.GONE, default=gone}"
+                    app:layout_constraintWidth_max="@dimen/button_max_width"
+                    app:layout_constraintTop_toBottomOf="@id/sip_only_logo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/default_text_style"
                     android:id="@+id/help"
@@ -90,6 +122,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/header_style"
                     android:id="@+id/sip_identity_label"
+                    android:visibility="@{viewModel.hideLinphoneAccountLogin ? View.GONE : View.VISIBLE}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
@@ -102,6 +135,7 @@
                 <androidx.appcompat.widget.AppCompatEditText
                     style="@style/default_text_style"
                     android:id="@+id/sip_identity"
+                    android:visibility="@{viewModel.hideLinphoneAccountLogin ? View.GONE : View.VISIBLE}"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="16dp"
@@ -122,6 +156,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/header_style"
                     android:id="@+id/password_label"
+                    android:visibility="@{viewModel.hideLinphoneAccountLogin ? View.GONE : View.VISIBLE}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
@@ -135,6 +170,7 @@
                 <androidx.appcompat.widget.AppCompatEditText
                     style="@style/default_text_style"
                     android:id="@+id/password"
+                    android:visibility="@{viewModel.hideLinphoneAccountLogin ? View.GONE : View.VISIBLE}"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="16dp"
@@ -154,6 +190,7 @@
 
                 <ImageView
                     android:id="@+id/eye"
+                    android:visibility="@{viewModel.hideLinphoneAccountLogin ? View.GONE : View.VISIBLE}"
                     android:onClick="@{() -> viewModel.toggleShowPassword()}"
                     android:layout_width="@dimen/icon_size"
                     android:layout_height="0dp"
@@ -169,6 +206,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/primary_button_label_style"
                     android:id="@+id/login"
+                    android:visibility="@{viewModel.hideLinphoneAccountLogin ? View.GONE : View.VISIBLE}"
                     android:onClick="@{() -> viewModel.login()}"
                     android:enabled="@{viewModel.loginEnabled &amp;&amp; !viewModel.registrationInProgress, default=false}"
                     android:layout_width="0dp"
@@ -185,6 +223,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/default_text_style_600"
                     android:id="@+id/forgotten_password"
+                    android:visibility="@{viewModel.hideLinphoneAccountLogin ? View.GONE : View.VISIBLE}"
                     android:onClick="@{forgottenPasswordClickListener}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -204,6 +243,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/default_text_style"
                     android:id="@+id/or"
+                    android:visibility="@{viewModel.hideLinphoneAccountLogin ? View.GONE : View.VISIBLE}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="28dp"
@@ -217,6 +257,7 @@
                     app:layout_constraintTop_toBottomOf="@id/forgotten_password"/>
 
                 <View
+                    android:visibility="@{viewModel.hideLinphoneAccountLogin ? View.GONE : View.VISIBLE}"
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_marginStart="16dp"
@@ -227,6 +268,7 @@
                     app:layout_constraintBottom_toBottomOf="@id/or"/>
 
                 <View
+                    android:visibility="@{viewModel.hideLinphoneAccountLogin ? View.GONE : View.VISIBLE}"
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_marginEnd="16dp"
@@ -235,6 +277,14 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/or"
                     app:layout_constraintBottom_toBottomOf="@id/or"/>
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/login_options_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:barrierAllowsGoneWidgets="false"
+                    app:constraint_referenced_ids="or,sip_only_message" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/secondary_button_label_style"
@@ -253,7 +303,7 @@
                     app:layout_constraintWidth_max="@dimen/button_max_width"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/or" />
+                    app:layout_constraintTop_toBottomOf="@id/login_options_top" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/secondary_button_label_style"

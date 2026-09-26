@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE resources [
-<!ENTITY appName "Linphone">
+<!ENTITY appName "BizVoIP">
 ]>
 <resources>
     <string name="device_id">Apparaat-ID</string>
@@ -50,8 +50,6 @@
     <string name="welcome_page_title">Welkom</string>
     <string name="notification_file_transfer_title">&amp;appNaam;</string>
     <string name="welcome_page_subtitle">in &appName;</string>
-    <string name="welcome_page_2_title">Beveiligd</string>
-    <string name="welcome_page_2_message">Dankzij onze <b>end-to-end-encryptie</b> is uw communicatie veilig.</string>
     <string name="sip_address_copied_to_clipboard_toast">SIP-adres gekopieerd naar klembord</string>
     <string name="new_account_configured_toast">Nieuw account geconfigureerd</string>
     <string name="export_file_to_media_store_error_toast">Fout bij het exporteren van een bestand naar de galerij</string>
@@ -67,7 +65,6 @@
     <string name="assistant_dialog_confirm_phone_number_message">Weet u zeker dat uw telefoonnummer %s is?</string>
     <string name="assistant_scan_qr_code">Scan de QR-code</string>
     <string name="assistant_login_third_party_sip_account_title">SIP-account van derden</string>
-    <string name="assistant_login_third_party_sip_account">Gebruik een SIP-account van derden</string>
     <string name="assistant_login_using_single_sign_on">Eenmalige aanmelding</string>
     <string name="assistant_login_cant_parse_address_toast">SIP-adres is ongeldig!</string>
     <string name="assistant_account_login_already_connected_error">Account bestaat al</string>
@@ -110,7 +107,6 @@
     <string name="help_about_privacy_policy_title">Privacy beleid</string>
     <string name="help_about_version_title">Versie</string>
     <string name="help_about_check_for_update">Controleer op updates</string>
-    <string name="help_about_contribute_translations_title">Draag bij aan &appName;-vertaling</string>
     <string name="help_about_advanced_title">Geavanceerd</string>
     <string name="help_dialog_update_available_title">Update beschikbaar</string>
     <string name="help_dialog_update_available_message">Er is een nieuwe versie %s beschikbaar. Wilt u updaten?</string>
@@ -249,9 +245,7 @@
     <string name="settings_security_enable_vfs_dialog_confirmation_message">Zodra dit is geactiveerd, moet je de app opnieuw starten.\nDaarna wordt alle applicatiedata versleuteld en is deze alleen nog toegankelijk via de applicatie.\n\nWees voorzichtig: dit kan niet ongedaan worden gemaakt!</string>
     <string name="settings_calls_change_ringtone_title">Beltoon wijzigen</string>
     <string name="settings_conversations_mark_as_read_when_dismissing_notif_title">Gesprek als gelezen markeren bij het sluiten van berichtmelding</string>
-    <string name="welcome_page_1_message">Een <b>beveiligde</b>, <b>open source</b> en <b>Franstalige</b> communicatie-app.</string>
     <string name="welcome_page_3_title">Open-source</string>
-    <string name="welcome_page_3_message">Een <b>gratis</b> en open source applicatie sinds <b>2001</b>.</string>
     <string name="file_successfully_exported_to_media_store_toast">Bestand is geëxporteerd naar de galerij</string>
     <string name="remote_provisioning_config_applied_toast">Configuratie succesvol toegepast</string>
     <string name="assistant_recover_phone_number_account_label">Een telefoonnummer</string>
@@ -823,8 +817,6 @@
     <string name="search">Zoeken</string>
     <string name="menu_edit_chat_message">Bewerken</string>
     <string name="drawer_menu_account_connection_status_disconnected">Verbinding verbroken</string>
-    <string name="help_about_user_guide_title">&appName; gebruikershandleiding</string>
-    <string name="help_about_user_guide_subtitle">Leer alle functies van de app te beheersen, stap voor stap.</string>
     <string name="help_about_contribute_translations_subtitle">Help mee de app toegankelijk te maken aan zoveel mogelijk personen.</string>
     <string name="help_troubleshooting_subtitle">Verstuur uw diagnostische logs om het oplossen van fouten te vergemakkelijken.</string>
     <string name="settings_contacts_presence_subscribe_title">Abboneer op aanwezigheidsinformatie</string>

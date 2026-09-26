@@ -54,7 +54,6 @@
     <string name="notification_reply_to_message">ຕອບກັບ</string>
     <string name="notification_missed_call_title">ສາຍທີ່ບໍ່ໄດ້ຮັບ</string>
     <string name="welcome_page_title">ຍິນດີຕ້ອນຮັບ</string>
-    <string name="welcome_page_2_title">ປອດໄພ</string>
     <string name="welcome_page_3_title">ໂອເພນຊອດ</string>
     <string name="sip_address_copied_to_clipboard_toast">ຄັດລອກທີ່ຢູ່ SIP ໃສ່ຄລິບບອດແລ້ວ</string>
     <string name="remote_provisioning_config_applied_toast">ນຳໃຊ້ການຕັ້ງຄ່າສຳເລັດແລ້ວ</string>
@@ -65,7 +64,6 @@
     <string name="assistant_account_login">ເຂົ້າສູ່ລະບົບ</string>
     <string name="assistant_scan_qr_code">ສະແກນລະຫັດ QR</string>
     <string name="assistant_qr_code_invalid_toast">ລະຫັດ QR ບໍ່ຖືກຕ້ອງ!</string>
-    <string name="assistant_login_third_party_sip_account">ໃຊ້ບັນຊີ SIP ຂອງພາກສ່ວນທີສາມ</string>
     <string name="assistant_no_account_yet">ຍັງບໍ່ມີບັນຊີບໍ?</string>
     <string name="assistant_account_register">ລົງທະບຽນ</string>
     <string name="assistant_account_creation_wrong_phone_number">ເບີໂທບໍ່ຖືກຕ້ອງບໍ?</string>
@@ -91,7 +89,6 @@
     <string name="drawer_menu_no_account_configured_yet">ຍັງບໍ່ທັນມີການຕັ້ງຄ່າບັນຊີ</string>
     <string name="drawer_menu_add_account">ເພີ່ມບັນຊີ</string>
     <string name="help_title">ຊ່ວຍເຫຼືອ</string>
-    <string name="help_about_user_guide_subtitle">ຮຽນຮູ້ວິທີໃຊ້ງານທຸກຄຸນສົມບັດຂອງແອັບຯເທື່ອລະຂັ້ນຕອນ.</string>
     <string name="help_about_privacy_policy_title">ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ</string>
     <string name="help_about_version_title">ເວີຊັນ</string>
     <string name="help_about_check_for_update">ກວດສອບການອັບເດດ</string>

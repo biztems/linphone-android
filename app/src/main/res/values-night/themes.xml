@@ -1,7 +1,7 @@
 <resources>
     <style name="AppSplashScreenTheme" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/background_color_alt_dark_mode</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/linphone_splashscreen</item>
+        <item name="windowSplashScreenBackground">@color/biztems_dark</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/bizvoip_splash_logo</item>
         <item name="postSplashScreenTheme">@style/Theme.Linphone</item>
     </style>
 
@@ -90,6 +90,11 @@
         <item name="color_bottom_sheet_background">@color/background_color_alt_dark_mode</item>
 
         <item name="color_bottom_sheet_disabled_menu">@color/gray_500</item>
+    </style>
+
+    <style name="Theme.LinphoneBiztems" parent="Theme.Linphone">
+        <item name="color_main1_100">@color/biztems_main_100</item>
+        <item name="color_main1_500">@color/biztems_main_500</item>
     </style>
 
     <style name="Theme.LinphoneTerracotta" parent="Theme.Linphone">

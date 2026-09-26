@@ -118,11 +118,11 @@
                 <data android:scheme="sip" />
                 <data android:scheme="callto" />
                 <data android:scheme="sips" />
-                <data android:scheme="sip-linphone" />
-                <data android:scheme="sips-linphone" />
-                <data android:scheme="linphone-sip" />
-                <data android:scheme="linphone-sips" />
-                <data android:scheme="linphone-config" />
+                <data android:scheme="sip-bizvoip" />
+                <data android:scheme="sips-bizvoip" />
+                <data android:scheme="bizvoip-sip" />
+                <data android:scheme="bizvoip-sips" />
+                <data android:scheme="bizvoip-config" />
             </intent-filter>
 
         </activity>

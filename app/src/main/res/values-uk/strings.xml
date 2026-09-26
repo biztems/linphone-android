@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE resources [
-<!ENTITY appName "Linphone">
+<!ENTITY appName "BizVoIP">
 ]>
 <resources>
     <string name="sip_address">SIP-адреса</string>
@@ -17,8 +17,6 @@
     <string name="today">Сьогодні</string>
     <string name="yesterday">Вчора</string>
     <string name="welcome_page_subtitle">в &appName;</string>
-    <string name="welcome_page_2_title">Захищений</string>
-    <string name="welcome_page_2_message">Ваше спілкування убезпечене завдяки нашому <b>наскрізному шифруванню</b>.</string>
     <string name="welcome_page_3_title">Відкритий код</string>
     <string name="new_account_configured_toast">Новий обліковий запис налаштовано</string>
     <string name="file_successfully_exported_to_documents_toast">Файл завантажено до документів</string>
@@ -30,7 +28,6 @@
     <string name="assistant_dialog_privacy_policy_label">політика конфіденційності</string>
     <string name="file_successfully_exported_to_media_store_toast">Файл завантажено до галереї</string>
     <string name="welcome_page_title">Ласкаво просимо</string>
-    <string name="welcome_page_3_message"><b>Безкоштовний</b> застосунок з відкритим кодом з <b>2001 року</b>.</string>
     <string name="sip_address_copied_to_clipboard_toast">SIP-адресу скопійовано в буфер обміну</string>
     <string name="export_file_to_media_store_error_toast">Помилка під час спроби завантажити файл до галереї</string>
     <plurals name="days">
@@ -87,7 +84,6 @@
         <item quantity="other">%s файлів завантажується</item>
     </plurals>
     <string name="notification_keep_app_alive_message">Натисніть, щоб відкрити</string>
-    <string name="welcome_page_1_message"><b>Захищений</b>, <b>з відкритим вихідним кодом</b> та <b>французький</b> застосунок для спілкування.</string>
     <string name="media_playback_low_volume_warning_toast">Гучність занадто низька, можливо, ви нічого не чуєте!</string>
     <string name="remote_provisioning_config_failed_toast">Помилка під час спроби завантажити та застосувати віддалену конфігурацію</string>
     <string name="assistant_dialog_general_terms_and_privacy_policy_message">Продовжуючи, Ви приймаєте наші %1$s та %2$s.</string>
@@ -147,7 +143,6 @@
     <string name="assistant_account_register_push_notification_not_received_error">Push-сповіщення з токеном авторизації не отримано упродовж 5 секунд, спробуйте пізніше</string>
     <string name="assistant_login_third_party_sip_account_title">Сторонній обліковий запис SIP</string>
     <string name="assistant_account_creation_sms_confirmation_explanation">Ми надіслали код підтвердження на ваш номер телефону %1$s.\n\nБудь ласка, введіть код підтвердження нижче:</string>
-    <string name="assistant_login_third_party_sip_account">Використати сторонній обліковий запис SIP</string>
     <string name="assistant_no_account_yet">Ще немає облікового запису?</string>
     <string name="assistant_third_party_sip_account_warning_explanation">Для деяких функцій потрібен обліковий запис &appName;, такі як груповий обмін повідомленнями, відеоконференції…\n\nЦі функції приховані, якщо ви реєструєтесь за допомогою стороннього облікового запису SIP.\n\nЩоб увімкнути їх у комерційному проєкті, зв’яжіться з нами.</string>
     <string name="assistant_permissions_subtitle">Щоб повною мірою користуватися &appName;, вам потрібно надати застосунку наступні дозволи:</string>
@@ -155,7 +150,6 @@
     <string name="drawer_menu_account_connection_status_failed">Помилка</string>
     <string name="drawer_menu_no_account_configured_yet">Обліковий запис ще не налаштовано</string>
     <string name="help_about_privacy_policy_subtitle">Яку інформацію збирає та використовує &appName;</string>
-    <string name="help_about_contribute_translations_title">Зробіть свій внесок у переклад &appName;</string>
     <string name="help_error_checking_version_toast_message">Під час перевірки оновлень сталася помилка</string>
     <string name="settings_calls_change_ringtone_pick_title">Обрати мелодію дзвінка</string>
     <string name="settings_conversations_auto_export_media_to_native_gallery_title">Зробити завантажені медіафайли загальнодоступними</string>
@@ -837,8 +831,6 @@
     </plurals>
     <string name="network_not_reachable">Відсутнє підключення до Інтернету</string>
     <string name="operation_in_progress_overlay">Операція триває, будь ласка, зачекайте</string>
-    <string name="help_about_user_guide_title">&appName; посібник користувача</string>
-    <string name="help_about_user_guide_subtitle">Дізнайтеся, як опанувати всі функції програми крок за кроком.</string>
     <string name="help_about_contribute_translations_subtitle">Допоможіть зробити застосунок доступним для якомога більшої кількості людей.</string>
     <string name="help_troubleshooting_subtitle">Надсилайте свої діагностичні журнали для полегшення вирішення помилок.</string>
     <string name="content_description_cancel_files_or_text_pending_sharing">Натисніть, щоб скасувати обмін файлами або текстом, що очікує надсилання</string>

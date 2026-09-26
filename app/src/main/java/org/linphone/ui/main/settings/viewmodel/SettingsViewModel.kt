@@ -176,6 +176,7 @@ class SettingsViewModel
     val showColorSelector = MutableLiveData<Boolean>()
     val color = MutableLiveData<String>()
     val availableColorsNames = arrayListOf(
+        AppUtils.getString(R.string.biztems),
         AppUtils.getString(R.string.orange),
         AppUtils.getString(R.string.terracotta),
         AppUtils.getString(R.string.lavender),
@@ -188,6 +189,7 @@ class SettingsViewModel
         AppUtils.getString(R.string.mineral_blue),
     )
     val availableColorsValues = arrayListOf(
+        "biztems",
         "orange",
         "terracotta",
         "lavender",

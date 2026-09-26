@@ -6,6 +6,10 @@
 > fork, carry the additional permission in
 > [APPSTORE-EXCEPTION.md](APPSTORE-EXCEPTION.md). To contribute, see
 > [CONTRIBUTING.md](CONTRIBUTING.md).
+>
+> The app built from this branch is distributed by Biztems SRL as **BizVoIP**.
+> Linphone is a trademark of Belledonne Communications; BizVoIP is not
+> affiliated with or endorsed by Belledonne Communications.
 
 
 [![pipeline status](https://gitlab.linphone.org/BC/public/linphone-android/badges/master/pipeline.svg)](https://gitlab.linphone.org/BC/public/linphone-android/commits/master) 

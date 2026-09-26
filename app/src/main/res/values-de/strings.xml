@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE resources [
-<!ENTITY appName "Linphone">
+<!ENTITY appName "BizVoIP">
 ]>
 <resources>
     <string name="sip_address">SIP-Adresse</string>
@@ -66,11 +66,7 @@
     <string name="notification_keep_app_alive_message">Zum Öffnen klicken</string>
     <string name="welcome_page_title">Willkommen</string>
     <string name="welcome_page_subtitle">in &appName;</string>
-    <string name="welcome_page_1_message">Eine <b>sichere</b>, <b>Open Source</b> und <b>französische</b> Kommunikations-App.</string>
-    <string name="welcome_page_2_title">Gesichert</string>
-    <string name="welcome_page_2_message">Dank unserer <b>Ende-zu-Ende-Verschlüsselung</b> ist Ihre Verbindung sicher.</string>
     <string name="welcome_page_3_title">Open source</string>
-    <string name="welcome_page_3_message">Eine <b>kostenlose</b> Open-Source-Anwendung seit <b>2001</b>.</string>
     <string name="sip_address_copied_to_clipboard_toast">SIP-Adresse in die Zwischenablage kopiert</string>
     <string name="new_account_configured_toast">Neues Konto konfiguriert</string>
     <string name="file_successfully_exported_to_media_store_toast">Die Datei wurde in die native Galerie exportiert</string>
@@ -90,7 +86,6 @@
     <string name="assistant_account_login">Login</string>
     <string name="assistant_scan_qr_code">QR-Code scannen</string>
     <string name="assistant_qr_code_invalid_toast">Ungültiger QR-Code!</string>
-    <string name="assistant_login_third_party_sip_account">Drittanbieter-SIP-Konto verwenden</string>
     <string name="assistant_login_third_party_sip_account_title">Drittanbieter-SIP-Konto</string>
     <string name="assistant_login_using_single_sign_on">Single Sign-on</string>
     <string name="assistant_login_cant_parse_address_toast">SIP Adresse ist ungültig!</string>
@@ -817,10 +812,7 @@
     <string name="assistant_recover_email_account_label">Einer E-Mail</string>
     <string name="assistant_recover_phone_number_account_label">Einer Telefonnummer</string>
     <string name="assistant_recover_phone_number_account_unavailable_no_push_warning">Benachrichtigungen scheinen auf Ihrem Gerät nicht verfügbar zu sein, sind aber für die Wiederherstellung eines Rufnummernkontos in der mobilen App zwingend erforderlich.</string>
-    <string name="help_about_user_guide_title">&appName; Benutzeranleitung</string>
-    <string name="help_about_user_guide_subtitle">Lerne alle Funktionen der App zu meistern, Schritt für Schritt.</string>
     <string name="content_description_cancel_files_or_text_pending_sharing">Hier tippen um Datei- oder Textfreigaben abzubrechen</string>
-    <string name="help_about_contribute_translations_title">Zu &appName;-Übersetzungen beitragen</string>
     <string name="help_about_contribute_translations_subtitle">Helfen Sie mit, die App so vielen Menschen wie möglich zugänglich zu machen.</string>
     <string name="help_troubleshooting_subtitle">Übermitteln Sie Ihre Diagnoseprotokolle, um die Fehlerbehebung zu erleichtern.</string>
     <string name="settings_advanced_audio_codecs_stereo_subtitle">Stereo</string>

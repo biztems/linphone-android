@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE resources [
-<!ENTITY appName "Linphone">
+<!ENTITY appName "BizVoIP">
 ]>
 <resources>
-    <string name="help_about_user_guide_title">Guia do usuário do &appName;</string>
     <string name="settings_network_title">Rede</string>
     <string name="settings_network_allow_ipv6">Permitir IPv6</string>
     <string name="sip_address_display_name">Nome de exibição</string>
@@ -47,8 +46,6 @@
     <string name="help_troubleshooting_debug_logs_upload_error_toast_message">Falha ao enviar logs de depuração</string>
     <string name="settings_calls_adaptive_rate_control_title">Controle adaptativo de taxa</string>
     <string name="settings_conversations_mark_as_read_when_dismissing_notif_title">Marcar conversa como lida ao dispensar notificação de mensagem</string>
-    <string name="welcome_page_2_message">Suas comunicações estão seguras graças à nossa <b>criptografia de ponta a ponta</b> .</string>
-    <string name="help_about_user_guide_subtitle">Aprenda a dominar todos os recursos do aplicativo, passo a passo.</string>
     <string name="help_troubleshooting_subtitle">Transmita seus logs de diagnóstico para facilitar a resolução de bugs.</string>
     <string name="settings_calls_vibrate_while_ringing_title">Vibrar enquanto a chamada recebida está tocando</string>
     <string name="settings_contacts_carddav_sync_successful_toast">Sincronização foi bem-sucedida</string>
@@ -127,9 +124,7 @@
     <string name="notification_keep_app_alive_message">Clique para abrir</string>
     <string name="welcome_page_title">Bem vindo</string>
     <string name="welcome_page_subtitle">ao &appName;</string>
-    <string name="welcome_page_2_title">Seguro</string>
     <string name="welcome_page_3_title">Código aberto</string>
-    <string name="welcome_page_3_message">Um aplicativo <b>gratuito</b> e de código aberto desde <b>2001</b> .</string>
     <string name="sip_address_copied_to_clipboard_toast">Endereço SIP copiado para a área de transferência</string>
     <string name="new_account_configured_toast">Nova conta configurada</string>
     <string name="file_successfully_exported_to_media_store_toast">O arquivo foi exportado para a galeria nativa</string>
@@ -146,7 +141,6 @@
     <string name="assistant_dialog_confirm_phone_number_message">Tem certeza de que seu número de telefone é %s?</string>
     <string name="assistant_account_login">Login</string>
     <string name="assistant_scan_qr_code">Escanear QR code</string>
-    <string name="assistant_login_third_party_sip_account">Usar uma conta SIP de terceiros</string>
     <string name="assistant_login_third_party_sip_account_title">Conta SIP de terceiros</string>
     <string name="assistant_login_using_single_sign_on">Login único</string>
     <string name="assistant_login_cant_parse_address_toast">O endereço SIP é inválido!</string>
@@ -190,7 +184,6 @@
     <string name="help_about_privacy_policy_title">Política de privacidade</string>
     <string name="help_about_version_title">Versão</string>
     <string name="help_about_check_for_update">Verificar atualização</string>
-    <string name="help_about_contribute_translations_title">Contribua na tradução do &appName;</string>
     <string name="help_about_contribute_translations_subtitle">Ajude a tornar o aplicativo acessível ao maior número de pessoas possível.</string>
     <string name="help_about_advanced_title">Avançado</string>
     <string name="help_version_up_to_date_toast_message">Sua versão está atualizada</string>
@@ -325,7 +318,6 @@
     <string name="settings_advanced_audio_codecs_stereo_subtitle">estéreo</string>
     <string name="settings_advanced_video_codecs_title">Codecs de vídeo</string>
     <string name="notification_file_transfer_title">&appName;</string>
-    <string name="welcome_page_1_message">Um aplicativo de comunicação <b>francês</b>, <b>seguro</b> e de <b>código aberto</b>.</string>
     <string name="conversation_menu_go_to_info">Informações da conversa</string>
     <string name="conversation_menu_media_files">Mídia</string>
     <string name="settings_contacts_presence_subscribe_title">Acompanhar o status de presença</string>

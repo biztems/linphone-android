@@ -14,7 +14,7 @@ plugins {
     alias(libs.plugins.navigation)
 }
 
-val packageName = "org.linphone"
+val packageName = "it.biztems.phone"
 val useDifferentPackageNameForDebugBuild = false
 
 val sdkPath = providers.gradleProperty("LinphoneSdkBuildDir").get()
@@ -22,7 +22,9 @@ val googleServices = File(projectDir.absolutePath + "/google-services.json")
 val linphoneLibs = File("$sdkPath/libs/")
 val linphoneDebugLibs = File("$sdkPath/libs-debug/")
 val firebaseCloudMessagingAvailable = googleServices.exists()
-val crashlyticsAvailable = googleServices.exists() && linphoneLibs.exists() && linphoneDebugLibs.exists()
+// biztems: crash reports whenever the Firebase config is present; native symbols only with a local SDK build
+val crashlyticsAvailable = googleServices.exists()
+val crashlyticsNativeSymbols = crashlyticsAvailable && linphoneLibs.exists() && linphoneDebugLibs.exists()
 
 if (firebaseCloudMessagingAvailable) {
     println("google-services.json found, enabling Firebase CloudMessaging feature")
@@ -31,7 +33,7 @@ if (firebaseCloudMessagingAvailable) {
     println("google-services.json not found, disabling Firebase CloudMessaging feature")
 }
 if (crashlyticsAvailable) {
-    println("google-services.json found and Linphone SDK libs-debug folder found, enabling Crashlytics feature")
+    println("google-services.json found, enabling Crashlytics feature (native symbols: $crashlyticsNativeSymbols)")
     apply<CrashlyticsPlugin>()
 } else {
     println("Crashlytics has been disabled because either google-services.json file wasn't found or local Linphone SDK build folder isn't configured")
@@ -122,7 +124,7 @@ android {
         variant.outputs
             .map { it as com.android.build.gradle.internal.api.BaseVariantOutputImpl }
             .forEach { output ->
-                output.outputFileName = "linphone-android-${variant.buildType.name}-$gitVersion.apk"
+                output.outputFileName = "bizvoip-android-${variant.buildType.name}-$gitVersion.apk"
             }
     }
 
@@ -166,7 +168,7 @@ android {
             }
             resValue("string", "linphone_openid_callback_scheme", packageName)
 
-            if (crashlyticsAvailable) {
+            if (crashlyticsNativeSymbols) {
                 val path = File("$sdkPath/libs-debug/").toString()
                 configure<CrashlyticsExtension> {
                     nativeSymbolUploadEnabled = true
@@ -193,7 +195,7 @@ android {
             resValue("string", "file_provider", "$packageName.fileprovider")
             resValue("string", "linphone_openid_callback_scheme", packageName)
 
-            if (crashlyticsAvailable) {
+            if (crashlyticsNativeSymbols) {
                 val path = File("$sdkPath/libs-debug/").toString()
                 configure<CrashlyticsExtension> {
                     nativeSymbolUploadEnabled = true
@@ -312,7 +314,7 @@ configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
 }
 project.tasks.preBuild.dependsOn("ktlintFormat")
 
-if (crashlyticsAvailable) {
+if (crashlyticsNativeSymbols) {
     afterEvaluate {
         tasks.getByName("assembleDebug").finalizedBy(
             tasks.getByName("uploadCrashlyticsSymbolFileDebug"),

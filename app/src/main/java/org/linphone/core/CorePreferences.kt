@@ -343,7 +343,7 @@ class CorePreferences
 
     @get:AnyThread @set:WorkerThread
     var themeMainColor: String
-        get() = config.getString("ui", "theme_main_color", "orange")!!
+        get() = config.getString("ui", "theme_main_color", "biztems")!!
         set(value) {
             config.setString("ui", "theme_main_color", value)
         }
@@ -459,6 +459,11 @@ class CorePreferences
             "assistant_go_directly_to_third_party_sip_account_login",
             false
         )
+
+    // biztems: hides the linphone.org sign-in form, its terms and the SIP account warning
+    @get:AnyThread
+    val disableLinphoneAccounts: Boolean
+        get() = config.getBool("ui", "disable_linphone_accounts", false)
 
     @get:AnyThread
     val fetchContactsFromDefaultDirectory: Boolean

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE resources [
-<!ENTITY appName "Linphone">
+<!ENTITY appName "BizVoIP">
 ]>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Common words -->
@@ -80,11 +80,7 @@
     <!-- First screens user see when app is installed and started -->
     <string name="welcome_page_title">Bienvenue</string>
     <string name="welcome_page_subtitle">sur &appName;</string>
-    <string name="welcome_page_1_message">Une application de communication <b>sécurisée</b>, <b>open source</b> et <b>française</b>.</string>
-    <string name="welcome_page_2_title">Sécurisé</string>
-    <string name="welcome_page_2_message">Vos communications sont en sécurité grâce au <b>chiffrement de bout en bout</b>.</string>
     <string name="welcome_page_3_title">Open source</string>
-    <string name="welcome_page_3_message">Une application open source et un <b>service gratuit</b> depuis <b>2001</b>.</string>
     <!-- Generic toasts -->
     <string name="phone_number_copied_to_clipboard_toast">Numéro de téléphone copié</string>
     <string name="sip_address_copied_to_clipboard_toast">Adresse copiée</string>
@@ -110,7 +106,6 @@
     <string name="assistant_account_login">Connexion</string>
     <string name="assistant_scan_qr_code">Scanner un QR code</string>
     <string name="assistant_qr_code_invalid_toast">Ce QR code est invalide !</string>
-    <string name="assistant_login_third_party_sip_account">J\'ai un compte SIP tiers</string>
     <string name="assistant_login_third_party_sip_account_title">Compte SIP tiers</string>
     <string name="assistant_login_using_single_sign_on">Single sign on</string>
     <string name="assistant_login_cant_parse_address_toast">Adresse SIP invalide</string>
@@ -168,13 +163,10 @@
     <!-- Help & troubleshooting related -->
     <string name="help_title">Aide</string>
     <string name="help_about_title">À propos de &appName;</string>
-    <string name="help_about_user_guide_title">Guide utilisateur &appName;</string>
-    <string name="help_about_user_guide_subtitle">Apprenez à maîtriser toutes les fonctionnalités de l\'application, pas à pas.</string>
     <string name="help_about_privacy_policy_title">Politique de confidentialité</string>
     <string name="help_about_privacy_policy_subtitle">Quelles informations &appName; collecte et utilise</string>
     <string name="help_about_version_title">Version</string>
     <string name="help_about_check_for_update">Vérifier les mises à jour</string>
-    <string name="help_about_contribute_translations_title">Aider à traduire &appName;</string>
     <string name="help_about_contribute_translations_subtitle">Contribuez à rendre l\'application accessible au plus grand nombre.</string>
     <string name="help_about_advanced_title">Avancé</string>
     <string name="help_version_up_to_date_toast_message">Votre version est à jour</string>

@@ -103,8 +103,8 @@ class LandingFragment : GenericFragment() {
         }
 
         binding.setThirdPartySipAccountLoginClickListener {
-            if (viewModel.conditionsAndPrivacyPolicyAccepted) {
-                goToLoginThirdPartySipAccountFragment(false)
+            if (viewModel.conditionsAndPrivacyPolicyAccepted || corePreferences.disableLinphoneAccounts) {
+                goToLoginThirdPartySipAccountFragment(corePreferences.disableLinphoneAccounts)
             } else {
                 showAcceptConditionsAndPrivacyDialog(goToThirdPartySipAccountLogin = true)
             }

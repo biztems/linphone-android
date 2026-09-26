@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 
 <!DOCTYPE resources [
-    <!ENTITY appName "Linphone">
+    <!ENTITY appName "BizVoIP">
 ]>
 
 <resources>
@@ -31,14 +31,14 @@
     <string name="help_about_open_source_licenses_subtitle" translatable="false">© Belledonne Communications 2010-2025</string>
     <string name="help_advanced_send_debug_logs_email_address" translatable="false">linphone-android@belledonne-communications.com</string>
 
-    <string name="website_contact_url" translatable="false">https://linphone.org/contact</string>
-    <string name="website_download_url" translatable="false">https://linphone.org/linphone-softphone</string>
-    <string name="website_user_guide_url" translatable="false">https://linphone.org/en/docs/</string>
-    <string name="website_privacy_policy_url" translatable="false">https://linphone.org/en/privacy-policy</string>
-    <string name="website_terms_and_conditions_url" translatable="false">https://linphone.org/en/terms-of-use</string>
-    <string name="web_platform_register_email_url" translatable="false">https://subscribe.linphone.org/register/email</string>
-    <string name="web_platform_forgotten_password_url" translatable="false">https://subscribe.linphone.org</string>
-    <string name="website_translate_weblate_url" translatable="false">https://weblate.linphone.org/</string>
+    <string name="website_contact_url" translatable="false">https://www.biztems.it</string>
+    <string name="website_download_url" translatable="false">https://www.biztems.it</string>
+    <string name="website_user_guide_url" translatable="false">https://www.biztems.it</string>
+    <string name="website_privacy_policy_url" translatable="false">https://www.biztems.it/privacy-cookie-policy</string>
+    <string name="website_terms_and_conditions_url" translatable="false">https://www.biztems.it</string>
+    <string name="web_platform_register_email_url" translatable="false">https://www.biztems.it</string>
+    <string name="web_platform_forgotten_password_url" translatable="false">https://www.biztems.it</string>
+    <string name="website_translate_weblate_url" translatable="false">https://github.com/biztems/linphone-android</string>
     <string name="website_open_source_licences_usage_url" translatable="false">https://wiki.linphone.org/xwiki/wiki/public/view/Linphone/Third%20party%20components%20/#Hlinphone-android</string>
     <string name="conversation_end_to_end_encrypted_bottom_sheet_link" translatable="false"><u>https://linphone.org/en/features/#security</u></string>
 
@@ -125,12 +125,12 @@
 
     <!-- First screens user see when app is installed and started -->
     <string name="welcome_page_title">Welcome</string>
-    <string name="welcome_page_subtitle">in &appName;</string>
-    <string name="welcome_page_1_message">A <b>secured</b>, <b>open source</b> and <b>French</b> communication app.</string>
-    <string name="welcome_page_2_title">Secured</string>
-    <string name="welcome_page_2_message">Your communications are safe thanks to our <b>end-to-end encryption</b>.</string>
+    <string name="welcome_page_subtitle">to &appName;</string>
+    <string name="welcome_page_1_message">Your <b>Biztems</b> business phone line, on your smartphone.</string>
+    <string name="welcome_page_2_title">Always reachable</string>
+    <string name="welcome_page_2_message">Calls reach you even when the app is closed.</string>
     <string name="welcome_page_3_title">Open source</string>
-    <string name="welcome_page_3_message">A <b>free</b> and open source application since <b>2001</b>.</string>
+    <string name="welcome_page_3_message">Built on <b>Linphone</b>, with its source code published by Biztems.</string>
 
     <!-- Generic toasts -->
     <string name="phone_number_copied_to_clipboard_toast">Phone number copied into clipboard</string>
@@ -158,7 +158,7 @@
     <string name="assistant_account_login">Login</string>
     <string name="assistant_scan_qr_code">Scan QR code</string>
     <string name="assistant_qr_code_invalid_toast">Invalid QR code!</string>
-    <string name="assistant_login_third_party_sip_account">Use a third party SIP account</string>
+    <string name="assistant_login_third_party_sip_account">Enter account details</string>
     <string name="assistant_login_third_party_sip_account_title">Third party SIP account</string>
     <string name="assistant_login_using_single_sign_on">Single sign on</string>
     <string name="assistant_login_cant_parse_address_toast">SIP address is invalid!</string>
@@ -219,13 +219,13 @@
     <!-- Help & troubleshooting related -->
     <string name="help_title">Help</string>
     <string name="help_about_title">About &appName;</string>
-    <string name="help_about_user_guide_title">&appName; user guide</string>
-    <string name="help_about_user_guide_subtitle">Learn how to master all app features, step by step.</string>
+    <string name="help_about_user_guide_title">&appName; support</string>
+    <string name="help_about_user_guide_subtitle">Get help from Biztems with your account and calls.</string>
     <string name="help_about_privacy_policy_title">Privacy policy</string>
     <string name="help_about_privacy_policy_subtitle">What information &appName; collects and uses</string>
     <string name="help_about_version_title">Version</string>
     <string name="help_about_check_for_update">Check update</string>
-    <string name="help_about_contribute_translations_title">Contribute on &appName; translation</string>
+    <string name="help_about_contribute_translations_title">Source code</string>
     <string name="help_about_contribute_translations_subtitle">Help make the app accessible to as many people as possible.</string>
     <string name="help_about_advanced_title">Advanced</string>
     <string name="help_version_up_to_date_toast_message">Your version is up-to-date</string>
@@ -1069,4 +1069,6 @@
         <item>50e603d333c6049a37bd751375d08f3bd0abebd33facd30bd17b64b89658b421,
             com.google.android.apps.automotive.templates.host</item>
         </string-array>
+    <string name="assistant_sip_only_login_message">Scan the QR code Biztems sent you, or enter your account details.</string>
+    <string name="biztems" translatable="false">Biztems</string>
 </resources>

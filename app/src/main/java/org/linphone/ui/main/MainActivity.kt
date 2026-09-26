@@ -588,7 +588,7 @@ class MainActivity : GenericActivity() {
             }
             Intent.ACTION_VIEW -> {
                 val uri = intent.data?.toString() ?: ""
-                if (uri.startsWith("linphone-config:")) {
+                if (uri.startsWith("bizvoip-config:")) {
                     handleConfigIntent(uri)
                 } else {
                     handleCallIntent(intent)
@@ -794,10 +794,10 @@ class MainActivity : GenericActivity() {
         val sipUriToCall = when {
             uri.startsWith("tel:") -> uri.substring("tel:".length)
             uri.startsWith("callto:") -> uri.substring("callto:".length)
-            uri.startsWith("sip-linphone:") -> uri.replace("sip-linphone:", "sip:")
-            uri.startsWith("linphone-sip:") -> uri.replace("linphone-sip:", "sip:")
-            uri.startsWith("sips-linphone:") -> uri.replace("sips-linphone:", "sips:")
-            uri.startsWith("linphone-sips:") -> uri.replace("linphone-sips:", "sips:")
+            uri.startsWith("sip-bizvoip:") -> uri.replace("sip-bizvoip:", "sip:")
+            uri.startsWith("bizvoip-sip:") -> uri.replace("bizvoip-sip:", "sip:")
+            uri.startsWith("sips-bizvoip:") -> uri.replace("sips-bizvoip:", "sips:")
+            uri.startsWith("bizvoip-sips:") -> uri.replace("bizvoip-sips:", "sips:")
             else -> uri.replace("%40", "@") // Unescape @ character if needed
         }
 

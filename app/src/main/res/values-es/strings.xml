@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE resources [
-<!ENTITY appName "Linphone">
+<!ENTITY appName "BizVoIP">
 ]>
 <resources>
     <string name="sip_address">Dirección SIP</string>
@@ -58,8 +58,6 @@
     <string name="notification_keep_app_alive_message">Clic para abrir</string>
     <string name="welcome_page_title">Bienvenido</string>
     <string name="welcome_page_subtitle">en &appName;</string>
-    <string name="welcome_page_1_message">Una aplicación de comunicación <b>segura</b>, <b>de código abierto</b> y <b>en francés</b>.</string>
-    <string name="welcome_page_2_title">Segura</string>
     <string name="welcome_page_3_title">código abierto</string>
     <string name="sip_address_copied_to_clipboard_toast">Dirección SIP copiada al portapapeles</string>
     <string name="new_account_configured_toast">Nueva cuenta configurada</string>
@@ -77,7 +75,6 @@
     <string name="assistant_account_login">Acceso</string>
     <string name="assistant_scan_qr_code">Escanear código QR</string>
     <string name="assistant_qr_code_invalid_toast">¡Código QR no válido!</string>
-    <string name="assistant_login_third_party_sip_account">Utilice una cuenta SIP de terceros</string>
     <string name="assistant_login_third_party_sip_account_title">Cuenta SIP de terceros</string>
     <string name="assistant_login_using_single_sign_on">Inicio de sesión único</string>
     <string name="assistant_login_cant_parse_address_toast">¡La dirección SIP no es válida!</string>
@@ -85,7 +82,6 @@
     <string name="assistant_no_account_yet">¿Aún no tienes cuenta?</string>
     <string name="assistant_account_register">Registrar</string>
     <string name="assistant_account_creation_sms_confirmation_title">Confirma tu número de teléfono</string>
-    <string name="welcome_page_3_message">Una aplicación <b>gratuita</b> y de código abierto desde <b>2001</b>.</string>
     <string name="export_file_to_documents_error_toast">Error tratando de exportar archivo a documentos</string>
     <string name="media_player_generic_error_toast">Error al intentar crear un reproductor multimedia</string>
     <string name="assistant_dialog_confirm_phone_number_message">¿Estás seguro que tu número de teléfono es %s?</string>
@@ -96,7 +92,6 @@
         <item quantity="many">%s archivos en proceso de carga</item>
         <item quantity="other">%s archivo en proceso de carga</item>
     </plurals>
-    <string name="welcome_page_2_message">Tus comunicaciones están seguras gracias a nuestra <b>encriptación de extremo a extremo</b>.</string>
     <plurals name="notification_file_transfer_download">
         <item quantity="one">%s Archivo en descarga</item>
         <item quantity="many">%s Archivos en descarga</item>
@@ -143,8 +138,6 @@
     <string name="assistant_permissions_skip_permissions">Hazlo más tarde</string>
     <string name="assistant_permissions_access_camera_title"><b>Acceso a Cámara:</b> Para capturar vídeo durante videollamadas y conferencias.</string>
     <string name="assistant_recover_phone_number_account_unavailable_no_push_warning">Las notificaciones push no parecen estar disponibles en su dispositivo, pero son obligatorias para recuperar una cuenta de número de teléfono en la aplicación móvil.</string>
-    <string name="help_about_user_guide_title">&appName; Guía del usuario</string>
-    <string name="help_about_user_guide_subtitle">Aprenda a dominar todas las funciones de la aplicación, paso a paso.</string>
     <string name="help_about_privacy_policy_title">Política de privacidad</string>
     <string name="help_about_privacy_policy_subtitle">Qué información recopila y utiliza &appName;</string>
     <string name="help_about_version_title">Versión</string>
@@ -163,7 +156,6 @@
     <string name="help_troubleshooting_sdk_version_title">Versión SDK</string>
     <string name="help_troubleshooting_firebase_project_title">ID del proyecto de Firebase</string>
     <string name="help_troubleshooting_share_logs_dialog_title">Compartir enlaces de registros de depuración usando…</string>
-    <string name="help_about_contribute_translations_title">Contribuir a la traducción de &appName;</string>
     <string name="help_error_checking_version_toast_message">Se produjo un error al buscar actualizaciones</string>
     <string name="help_troubleshooting_print_logs_in_logcat">Imprimir registros en logcat</string>
     <string name="help_troubleshooting_debug_logs_cleaned_toast_message">Se han limpiado los registros de depuración</string>

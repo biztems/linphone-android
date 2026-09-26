@@ -13,6 +13,11 @@
     <color name="orange_main_100">#FFEACB</color>
     <color name="orange_main_500">#FF5E00</color>
 
+    <!-- biztems: brand green, pale lime tint and brand dark -->
+    <color name="biztems_main_100">#EAFDD0</color>
+    <color name="biztems_main_500">#4E7E07</color>
+    <color name="biztems_dark">#1A1A1A</color>
+
     <color name="gray_main2_100">#EEF6F8</color>
     <color name="gray_main2_200">#DFECF2</color>
     <color name="gray_main2_300">#C0D1D9</color>

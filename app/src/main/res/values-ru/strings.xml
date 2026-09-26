@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE resources [
-<!ENTITY appName "Linphone">
+<!ENTITY appName "BizVoIP">
 ]>
 <resources>
     <string name="sip_address_display_name">Отображаемое имя</string>
@@ -55,7 +55,6 @@
     <string name="notification_keep_app_alive_message">Нажмите, чтобы открыть</string>
     <string name="welcome_page_subtitle">в &appName;</string>
     <string name="welcome_page_3_title">Открытый исходный код</string>
-    <string name="welcome_page_3_message"><b>Бесплатное</b> приложение с открытым исходным кодом с <b>2001 года</b>.</string>
     <string name="sip_address_copied_to_clipboard_toast">SIP-адрес скопирован в буфер обмена</string>
     <string name="new_account_configured_toast">Новая учетная запись настроена</string>
     <string name="file_successfully_exported_to_documents_toast">Файл экспортирован в документы</string>
@@ -70,7 +69,6 @@
     <string name="assistant_account_login">Логин</string>
     <string name="assistant_scan_qr_code">Сканировать QR-код</string>
     <string name="assistant_qr_code_invalid_toast">Неверный QR-код!</string>
-    <string name="assistant_login_third_party_sip_account">Использовать сторонний SIP-аккаунт</string>
     <string name="assistant_login_using_single_sign_on">Единый вход</string>
     <string name="assistant_login_address_without_username_toast">SIP-адрес не содержит имя пользователя!</string>
     <string name="assistant_account_login_already_connected_error">Учетная запись уже существует</string>
@@ -92,7 +90,6 @@
     <string name="authentication_id">Идентификатор аутентификации (если отличается)</string>
     <string name="dialog_deny">Отказать</string>
     <string name="notification_channel_incoming_call_name">Уведомления о входящих звонках &appName;</string>
-    <string name="welcome_page_2_message">Ваши коммуникации защищены благодаря нашему <b>сквозному шифрованию</b>.</string>
     <string name="media_playback_low_volume_warning_toast">Громкость мультимедиа низкая, вы можете ничего не услышать!</string>
     <string name="assistant_dialog_general_terms_and_privacy_policy_title">Общие положения и политика конфиденциальности</string>
     <string name="assistant_dialog_general_terms_and_privacy_policy_message">Продолжая, вы принимаете наши %1$s и %2$s.</string>
@@ -115,8 +112,6 @@
     <string name="notification_channel_service_desc">Эта служба будет работать постоянно, чтобы поддерживать приложение в рабочем состоянии и позволять вам принимать звонки и сообщения без push-уведомлений.</string>
     <string name="notification_mark_message_as_read">Отметить как прочитанное</string>
     <string name="welcome_page_title">Добро пожаловать</string>
-    <string name="welcome_page_1_message"><b>Защищённое</b>, <b>с открытым исходным кодом</b> и <b>французское</b> приложение для общения.</string>
-    <string name="welcome_page_2_title">Безопасный</string>
     <string name="file_successfully_exported_to_media_store_toast">Файл экспортирован в собственную галерею</string>
     <string name="export_file_to_media_store_error_toast">Ошибка при попытке экспортировать файл в собственную галерею</string>
     <string name="assistant_login_third_party_sip_account_title">Сторонний SIP-аккаунт</string>
@@ -808,7 +803,6 @@
     <string name="assistant_recover_phone_number_account_unavailable_no_push_warning">Похоже, что push-уведомления недоступны на вашем устройстве, но они необходимы для восстановления номера телефона аккаунта в мобильном приложении.</string>
     <string name="drawer_menu_account_connection_status_cleared">Отключено</string>
     <string name="help_about_privacy_policy_title">Политика конфиденциальности</string>
-    <string name="help_about_contribute_translations_title">Внесите свой вклад в перевод &appName;</string>
     <string name="help_troubleshooting_title">Устранение неполадок</string>
     <string name="list_filter_no_result_found">Результатов не найдено…</string>
     <string name="connection_error_for_non_default_account">Ошибка подключения к аккаунту(ам)</string>
@@ -840,8 +834,6 @@
     <string name="help_troubleshooting_subtitle">Отправьте свои диагностические журналы, чтобы облегчить устранение ошибок.</string>
     <string name="settings_contacts_ldap_enabled_title">Включено</string>
     <string name="content_description_cancel_files_or_text_pending_sharing">Нажмите, чтобы отменить файлы или текст в ожидании обмена</string>
-    <string name="help_about_user_guide_title">&amp;appname; Руководство пользователя</string>
-    <string name="help_about_user_guide_subtitle">Узнайте, как освоить все функции приложения, шаг за шагом.</string>
     <string name="help_about_contribute_translations_subtitle">Помогите сделать приложение доступным как можно большим количеством людей.</string>
     <string name="menu_edit_chat_message">Изменить</string>
     <string name="search">Найти</string>

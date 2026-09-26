@@ -53,6 +53,8 @@ open class AccountLoginViewModel
 
     val hideThirdPartyAccount = MutableLiveData<Boolean>()
 
+    val hideLinphoneAccountLogin = MutableLiveData<Boolean>()
+
     val sipIdentity = MutableLiveData<String>()
 
     val password = MutableLiveData<String>()
@@ -134,6 +136,7 @@ open class AccountLoginViewModel
             hideCreateAccount.postValue(corePreferences.hideAssistantCreateAccount)
             hideScanQrCode.postValue(corePreferences.hideAssistantScanQrCode)
             hideThirdPartyAccount.postValue(corePreferences.hideAssistantThirdPartySipAccount)
+            hideLinphoneAccountLogin.postValue(corePreferences.disableLinphoneAccounts)
             conditionsAndPrivacyPolicyAccepted = corePreferences.conditionsAndPrivacyPolicyAccepted
 
             if (corePreferences.assistantDirectlyGoToThirdPartySipAccountLogin) {

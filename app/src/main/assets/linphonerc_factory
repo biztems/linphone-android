@@ -24,8 +24,6 @@ chat_messages_aggregation=1
 update_presence_model_timestamp_before_publish_expires_refresh=1
 
 [sound]
-#remove this property for any application that is not Linphone public version itself
-ec_calibrator_cool_tones=1
 disable_ringing=0
 
 [audio]
@@ -46,6 +44,15 @@ store_friends=0
 
 [app]
 record_aware=1
+
+[ui]
+# biztems: brand theme; calls and contacts only; SIP accounts only, pre-filled with our gateway
+theme_main_color=biztems
+disable_chat_feature=1
+disable_meetings_feature=1
+assistant_hide_create_account=1
+disable_linphone_accounts=1
+assistant_third_party_sip_account_domain=mobile.biztems.it:5065
 
 [lime]
 lime_update_threshold=86400
