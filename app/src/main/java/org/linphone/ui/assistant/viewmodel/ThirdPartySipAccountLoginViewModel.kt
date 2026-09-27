@@ -128,7 +128,9 @@ class ThirdPartySipAccountLoginViewModel
                     accountLoginErrorEvent.postValue(Event(error))
 
                     Log.e("$TAG Account failed to REGISTER [$message], removing it")
-                    core.removeAuthInfo(newlyCreatedAuthInfo)
+                    // biztems: the core keeps a copy of newlyCreatedAuthInfo, so removing our own
+                    // object failed and the rejected password was reused on every retry
+                    account.findAuthInfo()?.let { core.removeAuthInfo(it) }
                     core.removeAccount(newlyCreatedAccount)
                 }
             }

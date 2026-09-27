@@ -66,7 +66,7 @@
                     android:layout_height="@dimen/top_bar_height"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="@dimen/assistant_title_top_margin"
-                    android:text="@string/assistant_login_third_party_sip_account_title"
+                    android:text="@string/assistant_login_third_party_sip_account"
                     android:textColor="?attr/color_text"
                     android:textSize="28sp"
                     android:drawableStart="@drawable/user_circle"
