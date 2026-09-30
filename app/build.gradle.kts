@@ -128,7 +128,18 @@ android {
             }
     }
 
-    val keystorePropertiesFile = rootProject.file("keystore.properties")
+    // BizVoIP: signed with Biztems' upload key, the one for all its Android apps, which lives outside the repo
+    // with its passwords: ~/.biztems/android-upload.properties (or the file BIZTEMS_ANDROID_UPLOAD_PROPERTIES
+    // names), with an absolute storeFile. Upstream's tracked keystore.properties is only the fallback.
+    val biztemsUploadProperties = file(
+        System.getenv("BIZTEMS_ANDROID_UPLOAD_PROPERTIES")
+            ?: "${System.getProperty("user.home")}/.biztems/android-upload.properties"
+    )
+    val keystorePropertiesFile = if (biztemsUploadProperties.exists()) {
+        biztemsUploadProperties
+    } else {
+        rootProject.file("keystore.properties")
+    }
     val keystoreProperties = Properties()
     keystoreProperties.load(FileInputStream(keystorePropertiesFile))
 

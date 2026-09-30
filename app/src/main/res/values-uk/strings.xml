@@ -372,7 +372,6 @@
     <string name="manage_account_device_remove">Видалити</string>
     <string name="manage_account_device_last_connection">Останнє з\'єднання:</string>
     <string name="manage_account_dialog_remove_account_title">Вийти з облікового запису?</string>
-    <string name="manage_account_dialog_remove_account_message">Якщо ви хочете видалити свій обліковий запис назавжди, перейдіть за посиланням: https://sip.linphone.org</string>
     <string name="account_settings_title">Налаштування облікового запису</string>
     <string name="account_settings_push_notification_title">Дозволити push-сповіщення</string>
     <string name="account_settings_push_notification_not_available_title">Push-сповіщення недоступні!</string>

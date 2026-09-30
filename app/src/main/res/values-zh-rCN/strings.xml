@@ -297,7 +297,6 @@
     <string name="manage_account_device_remove">删除</string>
     <string name="manage_account_device_last_connection">上次连接：</string>
     <string name="manage_account_dialog_remove_account_title">退出登录并注销您的账户（该账户信息会被清除）？</string>
-    <string name="manage_account_dialog_remove_account_message">如果您想永久删除您的账户，请转到：https://sip.linphone.org</string>
     <string name="account_settings_title">账户设置</string>
     <string name="account_settings_push_notification_title">允许推送通知</string>
     <string name="account_settings_push_notification_not_available_title">推送通知不可用！</string>

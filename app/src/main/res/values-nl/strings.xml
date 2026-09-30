@@ -193,7 +193,6 @@
     <string name="manage_account_device_remove">Verwijderen</string>
     <string name="manage_account_device_last_connection">Laatste verbinding:</string>
     <string name="manage_account_dialog_remove_account_title">Uitloggen uit je account?</string>
-    <string name="manage_account_dialog_remove_account_message">Als je je account permanent wilt verwijderen, ga naar: https://sip.linphone.org</string>
     <string name="account_settings_title">Accountinstellingen</string>
     <string name="content_description_chat_open_attach_file">Open bestandskiezer</string>
     <string name="content_description_ldap_save">Sla LDAP-configuratie op</string>

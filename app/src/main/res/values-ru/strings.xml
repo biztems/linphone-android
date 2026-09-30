@@ -234,7 +234,6 @@
     <string name="settings_advanced_video_codecs_title">Видеокодеки</string>
     <string name="manage_account_edit_picture">Редактировать изображение</string>
     <string name="manage_account_add_picture">Добавить изображение</string>
-    <string name="manage_account_dialog_remove_account_message">Если вы хотите удалить свою учетную запись навсегда, перейдите по ссылке: https://sip.linphone.org</string>
     <string name="account_settings_turn_username_title">Имя пользователя TURN</string>
     <string name="account_settings_audio_video_conference_factory_uri_title">URI фабрики аудио/видео конференции</string>
     <string name="assistant_third_party_sip_account_warning_ok">Я понял</string>
