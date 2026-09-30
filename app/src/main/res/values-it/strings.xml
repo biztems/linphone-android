@@ -133,7 +133,7 @@
     <string name="manage_account_e2e_encrypted_mode_default_summary">Questa modalità garantisce la riservatezza dei tuoi dati. La nostra tecnologia di cifratura end-to-end offre il massimo livello di sicurezza per le comunicazioni.</string>
     <string name="manage_account_e2e_encrypted_mode_interoperable_summary">Questa modalità ti permette di usare tutte le funzioni di &appName; restando interoperabile con qualsiasi servizio SIP grazie alla cifratura punto a punto.</string>
     <string name="manage_account_device_last_connection">Ultima connessione:</string>
-    <string name="manage_account_dialog_remove_account_message">Per eliminare definitivamente il tuo account vai su: https://sip.linphone.org</string>
+    <string name="manage_account_dialog_remove_account_message">L\'account viene tolto solo da questo telefono. Per chiuderlo, chiedi al tuo amministratore o a Biztems.</string>
     <string name="manage_account_outbound_proxy">Proxy SIP in uscita</string>
     <string name="manage_account_dialog_outbound_proxy_help_message">Se questo campo è compilato, il proxy in uscita viene abilitato automaticamente. Lascialo vuoto per disabilitarlo.</string>
     <string name="account_settings_title">Impostazioni dell\'account</string>

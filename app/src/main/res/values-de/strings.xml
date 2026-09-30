@@ -265,7 +265,6 @@
     <string name="manage_account_device_remove">Entfernen</string>
     <string name="manage_account_device_last_connection">Letzte Verbindung:</string>
     <string name="manage_account_dialog_remove_account_title">Von Ihrem Konto abmelden?</string>
-    <string name="manage_account_dialog_remove_account_message">Wenn Sie Ihr Konto dauerhaft löschen möchten, gehen Sie zu: https://sip.linphone.org</string>
     <string name="account_settings_title">Kontoeinstellungen</string>
     <string name="account_settings_push_notification_title">Push Benachrichtigungen zulassen</string>
     <string name="account_settings_push_notification_not_available_title">Push Benachrichtigungen sind nicht verfügbar!</string>

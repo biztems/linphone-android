@@ -99,6 +99,18 @@ class LinphoneUtils {
             }
         }
 
+        // BizVoIP: the emergency numbers the app never dials itself (CoreContext.startCall hands them to the
+        // phone's dialer): 112 and the Italian numbers it answers for, the coast guard, and 911 and 999 for
+        // anyone used to them. Extensions must never take one (pbx/generate.py refuses them).
+        private val emergencyNumbers = setOf("112", "113", "115", "118", "1530", "911", "999")
+
+        @AnyThread
+        fun emergencyNumber(username: String?): String? {
+            val dialed = username.orEmpty().filter { it.isDigit() || it == '+' }
+            val national = dialed.removePrefix("+39").removePrefix("0039")
+            return national.takeIf { it in emergencyNumbers }
+        }
+
         @WorkerThread
         fun applyInternationalPrefix(account: Account? = null): Boolean {
             return account?.params?.useInternationalPrefixForCallsAndChats

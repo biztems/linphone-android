@@ -212,7 +212,6 @@
     <string name="manage_account_device_remove">ເອົາອອກ</string>
     <string name="manage_account_device_last_connection">ການເຊື່ອມຕໍ່ຫຼ້າສຸດ:</string>
     <string name="manage_account_dialog_remove_account_title">ອອກຈາກລະບົບຂອງເຈົ້າບໍ?</string>
-    <string name="manage_account_dialog_remove_account_message">ຫາກເຈົ້າຕ້ອງການລຶບບັນຊີຖາວອນ, ກະລຸນາໄປທີ່: https://sip.linphone.org</string>
     <string name="manage_account_outbound_proxy">SIP Proxy ຂາອອກ</string>
     <string name="manage_account_dialog_outbound_proxy_help_message">ຫາກປ້ອນຂໍ້ມູນໃນຫ້ອງນີ້, Outbound Proxy ຈະຖືກເປີດໃຊ້ໂດຍອັດຕະໂນມັດ. ປະໄວ້ຫວ່າງຫາກຕ້ອງການປິດໃຊ້ງານ.</string>
     <string name="account_settings_title">ການຕັ້ງຄ່າບັນຊີ</string>

@@ -56,7 +56,7 @@ class CorePreferences
 
     @get:AnyThread @set:WorkerThread
     var sendLogsToCrashlytics: Boolean
-        get() = config.getBool("app", "send_logs_to_crashlytics", BuildConfig.CRASHLYTICS_ENABLED)
+        get() = config.getBool("app", "send_logs_to_crashlytics", false) // BizVoIP: crash reports only, logs carry numbers
         set(value) {
             config.setBool("app", "send_logs_to_crashlytics", value)
         }

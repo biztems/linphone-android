@@ -775,10 +775,8 @@ class CoreContext
                 }
             }
 
-            if (core.logCollectionUploadServerUrl.isNullOrEmpty()) {
-                Log.w("$TAG Logs sharing server URL not set, fixing that")
-                core.logCollectionUploadServerUrl = "https://files.linphone.org/http-file-transfer-server/hft.php"
-            }
+            // BizVoIP: no default logs sharing server (upstream sets Belledonne's here), so logs stay on
+            // the phone unless one is set in the settings
 
             corePreferences.linphoneConfigurationVersion = currentVersion
             Log.w(
@@ -1025,6 +1023,24 @@ class CoreContext
         localAddress: Address? = null,
         skipNetworkReachabilityTest: Boolean = false
     ) {
+        // BizVoIP: an emergency number goes to the phone's own dialer, never over SIP (and before the network
+        // check: it must work without data). The mobile network routes it to the emergency centre where the
+        // phone is, and the handset sends its location (AML); a call through the PBX can do neither.
+        val emergency = LinphoneUtils.emergencyNumber(address.username)
+        if (emergency != null) {
+            Log.w("$TAG [$emergency] is an emergency number, handing it to the phone's dialer")
+            postOnMainThread {
+                try {
+                    val intent = Intent(Intent.ACTION_DIAL, android.net.Uri.parse("tel:$emergency"))
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    context.startActivity(intent)
+                } catch (e: Exception) {
+                    Log.e("$TAG Failed to open the phone's dialer for [$emergency]: $e")
+                }
+            }
+            return
+        }
+
         if (!skipNetworkReachabilityTest && !core.isNetworkReachable) {
             Log.e("$TAG Network unreachable, abort outgoing call")
             return
@@ -1340,8 +1356,8 @@ class CoreContext
         if (core.fileTransferServer == "https://www.linphone.org:444/lft.php") {
             core.fileTransferServer = "https://files.linphone.org/http-file-transfer-server/hft.php"
         }
-        if (core.logCollectionUploadServerUrl == "https://www.linphone.org:444/lft.php") {
-            core.logCollectionUploadServerUrl = "https://files.linphone.org/http-file-transfer-server/hft.php"
+        if (core.logCollectionUploadServerUrl?.contains("linphone.org") == true) {
+            core.logCollectionUploadServerUrl = "" // BizVoIP: never Belledonne's logs server
         }
 
         Log.i("$TAG IMDN threshold set to 1 (meaning only sender will receive delivery & read notifications)")

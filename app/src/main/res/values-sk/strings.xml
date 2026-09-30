@@ -271,7 +271,6 @@
     <string name="manage_account_device_remove">Odstrániť</string>
     <string name="manage_account_device_last_connection">Posledné pripojenie:</string>
     <string name="manage_account_dialog_remove_account_title">Odhlásiť sa z Vášho účtu?</string>
-    <string name="manage_account_dialog_remove_account_message">Pokiaľ si želáte nenávratne zmazať svoj účet, navštívte: https://sip.linphone.org</string>
     <string name="account_settings_title">Nastavenia účtu</string>
     <string name="account_settings_push_notification_title">Povoliť push notifikácie</string>
     <string name="account_settings_im_encryption_mandatory_title">Šifrovanie správ je povinné</string>

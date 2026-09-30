@@ -29,7 +29,7 @@
 
     <string name="help_about_open_source_licenses_title" translatable="false">GNU General Public License v3.0</string>
     <string name="help_about_open_source_licenses_subtitle" translatable="false">© Belledonne Communications 2010-2025</string>
-    <string name="help_advanced_send_debug_logs_email_address" translatable="false">linphone-android@belledonne-communications.com</string>
+    <string name="help_advanced_send_debug_logs_email_address" translatable="false"></string>
 
     <string name="website_contact_url" translatable="false">https://www.biztems.it</string>
     <string name="website_download_url" translatable="false">https://www.biztems.it</string>
@@ -423,7 +423,7 @@
     <string name="manage_account_device_remove">Remove</string>
     <string name="manage_account_device_last_connection">Last connection:</string>
     <string name="manage_account_dialog_remove_account_title">Sign out of your account?</string>
-    <string name="manage_account_dialog_remove_account_message">If you wish to delete your account permanently, go to: https://sip.linphone.org</string>
+    <string name="manage_account_dialog_remove_account_message">This only removes the account from this phone. To close it, ask your administrator or Biztems.</string>
     <string name="manage_account_outbound_proxy">Outbound SIP Proxy</string>
     <string name="manage_account_dialog_outbound_proxy_help_message">If this field is filled, the outbound proxy will be enabled automatically. Leave it empty to disable it.</string>
 
