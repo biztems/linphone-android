@@ -91,8 +91,6 @@ class DrawerMenuFragment : GenericMainFragment() {
         }
 
         binding.setQuitClickedListener {
-            coreContext.stopKeepAliveService()
-
             coreContext.postOnCoreThread {
                 Log.i("$TAG Stopping Core Context")
                 coreContext.quitSafely()

@@ -69,10 +69,6 @@ class SettingsViewModel
         MutableLiveData()
     }
 
-    val keepAliveServiceSettingChangedEvent: MutableLiveData<Event<Boolean>> by lazy {
-        MutableLiveData()
-    }
-
     // Security settings
     val isVfsEnabled = MutableLiveData<Boolean>()
 
@@ -220,8 +216,6 @@ class SettingsViewModel
 
     val sendLogsToCrashlytics = MutableLiveData<Boolean>()
     val isCrashlyticsAvailable = MutableLiveData<Boolean>()
-    val startAtBoot = MutableLiveData<Boolean>()
-    val keepAliveThirdPartyAccountsService = MutableLiveData<Boolean>()
     val useSmffForCallRecording = MutableLiveData<Boolean>()
 
     val deviceName = MutableLiveData<String>()
@@ -379,8 +373,6 @@ class SettingsViewModel
             }
 
             sendLogsToCrashlytics.postValue(corePreferences.sendLogsToCrashlytics)
-            startAtBoot.postValue(corePreferences.autoStart)
-            keepAliveThirdPartyAccountsService.postValue(corePreferences.keepServiceAlive)
 
             deviceName.postValue(corePreferences.deviceName)
             remoteProvisioningUrl.postValue(core.provisioningUri)
@@ -836,32 +828,6 @@ class SettingsViewModel
             corePreferences.sendLogsToCrashlytics = newValue
             sendLogsToCrashlytics.postValue(newValue)
             coreContext.updateCrashlyticsEnabledSetting(newValue)
-        }
-    }
-
-    @UiThread
-    fun toggleStartAtBoot() {
-        val newValue = startAtBoot.value == false
-
-        coreContext.postOnCoreThread {
-            corePreferences.autoStart = newValue
-            startAtBoot.postValue(newValue)
-        }
-    }
-
-    @UiThread
-    fun toggleKeepAliveThirdPartyAccountService() {
-        val newValue = keepAliveThirdPartyAccountsService.value == false
-
-        coreContext.postOnCoreThread {
-            corePreferences.keepServiceAlive = newValue
-            keepAliveThirdPartyAccountsService.postValue(newValue)
-            if (newValue) {
-                coreContext.startKeepAliveService()
-            } else {
-                coreContext.stopKeepAliveService()
-            }
-            keepAliveServiceSettingChangedEvent.postValue(Event(true))
         }
     }
 
