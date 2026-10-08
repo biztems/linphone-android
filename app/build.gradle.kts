@@ -109,7 +109,7 @@ android {
         minSdk = 28
         targetSdk = 37
         // BizVoIP's own version, as on iOS: 1.0.1, the first Google Play release (upstream was 6.2.7)
-        versionCode = 100001 // 1.00.001
+        versionCode = 100002 // 1.00.001, second build: the first one sent to Google Play
         versionName = "1.0.1"
 
         manifestPlaceholders["appAuthRedirectScheme"] = packageName
