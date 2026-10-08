@@ -51,7 +51,6 @@
     <string name="notification_missed_calls">%s verpasste Anrufe</string>
     <string name="notification_missed_call_title">Verpasster Anruf</string>
     <string name="notification_push_received_title">&appName;</string>
-    <string name="notification_push_received_message">Nach neuen Nachrichten suchen</string>
     <string name="notification_file_transfer_title">&appName;</string>
     <string name="notification_file_transfer_startup_message">Dateiübertragung läuft</string>
     <plurals name="notification_file_transfer_upload">
@@ -111,10 +110,6 @@
     <string name="assistant_permissions_grant_all_of_them">OK</string>
     <string name="assistant_permissions_skip_permissions">Mach es später</string>
     <string name="assistant_permissions_subtitle">Um &appName; in vollem Umfang genießen zu können, müssen Sie uns die folgenden Berechtigungen erteilen:</string>
-    <string name="assistant_permissions_read_contacts_title"><b>Kontakte:</b> Um Ihre Kontakte anzuzeigen und herauszufinden, wer &appName; verwendet.</string>
-    <string name="assistant_permissions_post_notifications_title"><b>Benachrichtigungen:</b> Um informiert zu werden, wenn Sie eine Nachricht oder einen Anruf erhalten.</string>
-    <string name="assistant_permissions_record_audio_title"><b>Mikrofon:</b> Damit Ihre Gesprächspartner Sie hören können.</string>
-    <string name="assistant_permissions_access_camera_title"><b>Kamera:</b> Zum Aufnehmen von Videos während Videoanrufen und -konferenzen.</string>
     <string name="bottom_navigation_contacts_label">Kontakte</string>
     <string name="bottom_navigation_calls_label">Anrufe</string>
     <string name="bottom_navigation_conversations_label">Chats</string>
@@ -249,7 +244,6 @@
     <string name="manage_account_edit_picture">Bild bearbeiten</string>
     <string name="manage_account_remove_picture">Bild entfernen</string>
     <string name="manage_account_status_connected_summary">Dieses Konto ist online, jeder kann Sie anrufen.</string>
-    <string name="manage_account_status_cleared_summary">Das Konto wurde deaktiviert. Sie erhalten keine Anrufe oder Nachrichten.</string>
     <string name="manage_account_status_progress_summary">Das Konto stellt eine Verbindung zum Server her, bitte warten…</string>
     <string name="manage_account_status_failed_summary">Die Kontoverbindung ist fehlgeschlagen. Überprüfen Sie Ihre Einstellungen.</string>
     <string name="manage_account_international_prefix">Internationale Vorwahl</string>
@@ -812,7 +806,6 @@
     <string name="assistant_recover_phone_number_account_label">Einer Telefonnummer</string>
     <string name="assistant_recover_phone_number_account_unavailable_no_push_warning">Benachrichtigungen scheinen auf Ihrem Gerät nicht verfügbar zu sein, sind aber für die Wiederherstellung eines Rufnummernkontos in der mobilen App zwingend erforderlich.</string>
     <string name="content_description_cancel_files_or_text_pending_sharing">Hier tippen um Datei- oder Textfreigaben abzubrechen</string>
-    <string name="help_about_contribute_translations_subtitle">Helfen Sie mit, die App so vielen Menschen wie möglich zugänglich zu machen.</string>
     <string name="help_troubleshooting_subtitle">Übermitteln Sie Ihre Diagnoseprotokolle, um die Fehlerbehebung zu erleichtern.</string>
     <string name="settings_advanced_audio_codecs_stereo_subtitle">Stereo</string>
     <string name="contact_sms_invite_content">Hallo, kommen Sie mit zu &appName;! Sie können es hier %s kostenlos herunterladen</string>

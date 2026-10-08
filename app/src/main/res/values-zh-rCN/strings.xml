@@ -9,7 +9,6 @@
     <string name="conversation_info_participant_removed_from_conversation_toast">从聊天中移除了%s</string>
     <string name="content_description_call_voicemail">长按可拨打语音信箱</string>
     <string name="conversation_dialog_open_or_export_file_message">&appName;无法打开此文件。\n\n您想在另一个应用程序中打开它（如果可能的话），还是在您的设备上导出它？</string>
-    <string name="assistant_permissions_read_contacts_title"><b>读取联系人：</b>显示您的联系人并查找谁在使用 &appName;。</string>
     <string name="conversation_reply_to_message_title">回复：</string>
     <string name="conversation_message_forward_cancelled_toast">转发消息已经取消</string>
     <string name="call_state_outgoing_progress">进行中</string>
@@ -90,7 +89,6 @@
     <string name="notification_missed_calls">%s未接来电</string>
     <string name="notification_missed_call_title">未接来电</string>
     <string name="notification_push_received_title">&appName;</string>
-    <string name="notification_push_received_message">搜索新消息</string>
     <string name="notification_file_transfer_title">&appName;</string>
     <string name="notification_file_transfer_startup_message">正在传输文件</string>
     <plurals name="notification_file_transfer_upload">
@@ -138,8 +136,6 @@
     <string name="assistant_permissions_title">授予权限</string>
     <string name="assistant_permissions_grant_all_of_them">OK</string>
     <string name="assistant_permissions_skip_permissions">以后再说</string>
-    <string name="assistant_permissions_post_notifications_title"><b>发布通知：</b>当您收到消息或通话时收到通知。</string>
-    <string name="assistant_permissions_access_camera_title"><b>访问摄像头：</b>在视频通话和会议期间捕获视频。</string>
     <string name="assistant_forgotten_password_title">忘记密码</string>
     <string name="assistant_no_account_yet">还没有账户？</string>
     <string name="assistant_already_have_an_account">已经有账户了？</string>
@@ -285,7 +281,6 @@
     <string name="manage_account_add_picture">添加图像</string>
     <string name="manage_account_edit_picture">修改图像</string>
     <string name="manage_account_remove_picture">删除图像</string>
-    <string name="manage_account_status_cleared_summary">账户已被禁用，您将不会收到任何呼叫或消息。</string>
     <string name="manage_account_status_progress_summary">账户正在连接到服务器，请稍候…</string>
     <string name="manage_account_status_failed_summary">账户连接失败，请检查您的设置。</string>
     <string name="manage_account_international_prefix">国际前缀</string>
@@ -783,7 +778,6 @@
     <string name="assistant_account_creation_sms_confirmation_explanation">我们已给您的电话号码%1$s发送了验证码。\n\n请在下面输入验证码：</string>
     <string name="assistant_forgotten_password_subtitle">选择如何恢复您的账户。</string>
     <string name="conversation_failed_to_add_participant_to_group_conversation_toast">未能将参与者添加到聊天中</string>
-    <string name="assistant_permissions_record_audio_title"><b>录制音频：</b>这样您的对话方就可以听到您的声音并录制语音信息。</string>
     <string name="call_remotely_ended">对方已结束通话</string>
     <string name="calls_list_dialog_merge_into_conference_title">将所有通话合并到会议中？</string>
     <string name="network_is_not_wifi">仅支持Wi-Fi模式</string>
@@ -803,7 +797,6 @@
     <string name="conversation_info_no_address_to_add_to_contact_toast">没有地址要添加到联系人</string>
     <string name="conversation_event_ephemeral_messages_lifetime_changed">阅后即焚消息生命周期现在是%s</string>
     <string name="full_screen_intent_permission_not_granted">未授予显示来电权限！</string>
-    <string name="help_about_contribute_translations_subtitle">帮助尽可能多的人访问应用程序。</string>
     <string name="help_troubleshooting_subtitle">传输您的诊断日志以促进错误解决。</string>
     <string name="content_description_cancel_files_or_text_pending_sharing">单击可取消待共享的文件或文本</string>
     <string name="settings_contacts_ldap_enabled_title">已启用</string>

@@ -43,7 +43,6 @@
     <string name="notification_missed_calls">%s пропущенных звонков</string>
     <string name="notification_missed_call_title">Пропущенный звонок</string>
     <string name="notification_push_received_title">&appName;</string>
-    <string name="notification_push_received_message">Поиск новых сообщений</string>
     <string name="notification_file_transfer_title">&appName;</string>
     <string name="notification_file_transfer_startup_message">Выполняется передача файлов</string>
     <plurals name="notification_file_transfer_download">
@@ -213,7 +212,6 @@
     <string name="settings_user_interface_color_title">Основной цвет</string>
     <string name="settings_advanced_ring_during_early_media_title">Звонок во время входящего раннего потока</string>
     <string name="settings_developer_enabled_toast">Настройки разработчика включены</string>
-    <string name="manage_account_status_cleared_summary">Аккаунт отключен, вы не получите никаких звонков или сообщений.</string>
     <string name="manage_account_dialog_international_prefix_help_message">Выберите страну, чтобы разрешить &appName; сопоставлять ваши контакты.</string>
     <string name="manage_account_e2e_encrypted_mode_interoperable_summary">Этот режим позволяет вам пользоваться всеми функциями &appName;, сохраняя при этом совместимость с любым SIP-провайдером посредством шифрования «точка-точка».</string>
     <string name="settings_contacts_ldap_request_timeout_title">Тайм-аут (в секундах)</string>
@@ -245,9 +243,6 @@
     <string name="assistant_permissions_title">Предоставить разрешения</string>
     <string name="assistant_permissions_grant_all_of_them">ОК</string>
     <string name="assistant_permissions_skip_permissions">Сделайте это позже</string>
-    <string name="assistant_permissions_read_contacts_title"><b>Чтение контактов:</b> Чтобы отобразить ваши контакты и узнать, кто использует &appName;.</string>
-    <string name="assistant_permissions_record_audio_title"><b>Запись звука:</b> Чтобы ваш собеседник мог слышать вас и записывать голосовые сообщения.</string>
-    <string name="assistant_permissions_access_camera_title"><b>Доступ к камере.</b> Для записи видео во время видеозвонков и конференций.</string>
     <string name="assistant_forgotten_password_title">Пароль забыт</string>
     <string name="assistant_forgotten_password_subtitle">Выберите способ восстановления вашей учетной записи.</string>
     <string name="assistant_recover_phone_number_account_label">Номер телефона</string>
@@ -782,7 +777,6 @@
     <string name="content_description_chat_bubble_reply">Это сообщение является ответом на предыдущее сообщение</string>
     <string name="content_description_chat_bubble_toggle_voice_message_play_pause">Воспроизводит/приостанавливает воспроизведение голосового сообщения</string>
     <string name="content_description_chat_unsecured">Эта беседа не защищена</string>
-    <string name="assistant_permissions_post_notifications_title"><b>Отправлять уведомления:</b> Чтобы получать информацию о получении сообщения или звонка.</string>
     <string name="assistant_forgotten_password_message">Вы создали свой аккаунт, используя:</string>
     <string name="help_troubleshooting_debug_logs_upload_error_toast_message">Не удалось загрузить журналы отладки</string>
     <string name="settings_security_enable_vfs_dialog_confirmation_title">Вы действительно хотите всё зашифровать?</string>
@@ -833,7 +827,6 @@
     <string name="help_troubleshooting_subtitle">Отправьте свои диагностические журналы, чтобы облегчить устранение ошибок.</string>
     <string name="settings_contacts_ldap_enabled_title">Включено</string>
     <string name="content_description_cancel_files_or_text_pending_sharing">Нажмите, чтобы отменить файлы или текст в ожидании обмена</string>
-    <string name="help_about_contribute_translations_subtitle">Помогите сделать приложение доступным как можно большим количеством людей.</string>
     <string name="menu_edit_chat_message">Изменить</string>
     <string name="search">Найти</string>
     <string name="settings_developer_clear_native_friends_in_database_title">Очистить импортированные контакты из встроенной адресной книги</string>

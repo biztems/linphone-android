@@ -85,8 +85,6 @@
     <string name="assistant_permissions_title">Verleen machtigingen</string>
     <string name="assistant_permissions_grant_all_of_them">OK</string>
     <string name="assistant_permissions_skip_permissions">Doe het later</string>
-    <string name="assistant_permissions_post_notifications_title"><b>Berichtmeldingen:</b> Om op de hoogte te worden gesteld wanneer u een bericht of een oproep ontvangt.</string>
-    <string name="assistant_permissions_access_camera_title"><b>Toegang tot camera:</b> Om video vast te leggen tijdens videogesprekken en -conferenties.</string>
     <string name="assistant_forgotten_password_title">Wachtwoord vergeten</string>
     <string name="assistant_forgotten_password_subtitle">Kies hoe u uw account wilt herstellen.</string>
     <string name="assistant_forgotten_password_message">U heeft uw account aangemaakt met:</string>
@@ -223,7 +221,6 @@
     <string name="dialog_call">Telefoongesprek</string>
     <string name="sip_address">SIP-adres</string>
     <string name="notification_channel_service_desc">Deze service blijft continu actief om de app actief te houden en ervoor te zorgen dat u oproepen en berichten kunt ontvangen zonder pushmeldingen.</string>
-    <string name="notification_push_received_message">Zoeken naar nieuwe berichten</string>
     <string name="notification_file_transfer_startup_message">Bestand(en)overdracht bezig</string>
     <plurals name="selection_count_label">
         <item quantity="one">%s geselecteerd</item>
@@ -251,8 +248,6 @@
     <string name="assistant_recover_phone_number_account_unavailable_no_push_warning">Pushmeldingen lijken niet beschikbaar te zijn op uw apparaat, maar ze zijn verplicht om een telefoonnummeraccount in de mobiele app te herstellen.</string>
     <string name="remote_provisioning_config_failed_toast">Fout bij het proberen om de externe configuratie te downloaden en toe te passen</string>
     <string name="assistant_qr_code_invalid_toast">Ongeldige QR-code!</string>
-    <string name="assistant_permissions_read_contacts_title"><b>Contacten lezen:</b> Hiermee geeft u uw contactpersonen weer en kunt u achterhalen wie &appName; gebruikt.</string>
-    <string name="assistant_permissions_record_audio_title"><b>Audio opnemen:</b> Zodat uw gesprekspartner u kan horen en om spraakberichten op te nemen.</string>
     <string name="help_about_privacy_policy_subtitle">Welke informatie &appName; verzamelt en gebruikt</string>
     <string name="settings_security_enable_vfs_subtitle">Waarschuwing: eenmaal ingeschakeld kan dit niet meer worden uitgeschakeld!</string>
     <string name="settings_calls_calibrate_echo_canceller_done">%s ms</string>
@@ -260,7 +255,6 @@
     <string name="settings_contacts_ldap_max_results_title">Maximum aantal resultaten</string>
     <string name="settings_contacts_ldap_request_timeout_title">Time-out (in seconden)</string>
     <string name="settings_contacts_ldap_request_delay_title">Tijd tussen twee aanvragen (in milliseconden)</string>
-    <string name="manage_account_status_cleared_summary">Account is uitgeschakeld, je ontvangt geen oproepen of berichten.</string>
     <string name="manage_account_dialog_international_prefix_help_message">Kies je land zodat &appName; je contacten kan koppelen.</string>
     <string name="content_description_chat_edit_conversation_subject">Klik om het onderwerp van dit gesprek te bewerken</string>
     <string name="settings_contacts_carddav_mandatory_field_not_filled_toast">Gelieve minstens de weergavenaam en de server-URL in te vullen</string>
@@ -816,7 +810,6 @@
     <string name="search">Zoeken</string>
     <string name="menu_edit_chat_message">Bewerken</string>
     <string name="drawer_menu_account_connection_status_disconnected">Verbinding verbroken</string>
-    <string name="help_about_contribute_translations_subtitle">Help mee de app toegankelijk te maken aan zoveel mogelijk personen.</string>
     <string name="help_troubleshooting_subtitle">Verstuur uw diagnostische logs om het oplossen van fouten te vergemakkelijken.</string>
     <string name="settings_contacts_presence_subscribe_title">Abboneer op aanwezigheidsinformatie</string>
     <string name="settings_contacts_ldap_enabled_title">Is ingeschakeld</string>

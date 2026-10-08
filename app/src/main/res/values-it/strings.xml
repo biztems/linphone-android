@@ -23,7 +23,7 @@
     <string name="call_transfer_in_progress_toast">Trasferimento della chiamata in corso</string>
     <string name="assistant_third_party_sip_account_warning_explanation">Alcune funzioni richiedono un account &appName;, come i messaggi di gruppo o le videoconferenze…\n\nQueste funzioni non sono disponibili se accedi con un account SIP di terze parti.\n\nPer abilitarle in un progetto commerciale, contattaci.</string>
     <string name="assistant_account_register_unavailable_no_push_warning">Le notifiche push non sembrano disponibili sul tuo dispositivo, ma sono indispensabili per creare un account nell\'app mobile.\n\nTi invitiamo a creare un account sulla nostra piattaforma web:</string>
-    <string name="assistant_permissions_record_audio_title"><b>Registrazione audio:</b> per farti sentire dall\'interlocutore e registrare messaggi vocali.</string>
+    <string name="assistant_permissions_record_audio_title"><b>Registrazione audio:</b> per farti sentire dall\'interlocutore.</string>
     <string name="assistant_forgotten_password_subtitle">Scegli come recuperare il tuo account.</string>
     <string name="content_description_go_back_icon">Torna indietro</string>
     <string name="assistant_recover_phone_number_account_unavailable_no_push_warning">Le notifiche push non sembrano disponibili sul tuo dispositivo, ma sono indispensabili per recuperare un account associato a un numero di telefono nell\'app mobile.</string>
@@ -31,7 +31,7 @@
     <string name="assistant_login_third_party_sip_account">Inserisci i dati dell\'account</string>
     <string name="help_about_contribute_translations_title">Codice sorgente</string>
     <string name="assistant_dialog_phone_number_validation_not_available_register_button_label">Registrati con un\'email</string>
-    <string name="assistant_permissions_post_notifications_title"><b>Invio notifiche:</b> per avvisarti quando arriva un messaggio o una chiamata.</string>
+    <string name="assistant_permissions_post_notifications_title"><b>Invio notifiche:</b> per avvisarti quando arriva una chiamata.</string>
     <string name="assistant_permissions_access_local_network_title"><b>Accesso alla rete locale (facoltativo):</b> necessario da Android 17 per potersi collegare a un server sulla rete locale.</string>
     <string name="help_error_checking_version_toast_message">Si è verificato un errore durante la ricerca di aggiornamenti</string>
     <string name="help_quit_title">Chiudi l\'app</string>
@@ -124,7 +124,7 @@
     <string name="manage_account_remove_picture">Rimuovi l\'immagine</string>
     <string name="manage_account_status_connected_summary">Questo account è online: chiunque può chiamarti.</string>
     <string name="manage_account_status_disconnected_summary">Questo account è offline, probabilmente perché non sei connesso a Internet.</string>
-    <string name="manage_account_status_cleared_summary">L\'account è stato disattivato: non riceverai chiamate né messaggi.</string>
+    <string name="manage_account_status_cleared_summary">L\'account è stato disattivato: non riceverai chiamate.</string>
     <string name="manage_account_status_failed_summary">Connessione dell\'account non riuscita, controlla le impostazioni.</string>
     <string name="manage_account_choose_mode_title">Scegli la modalità dell\'account</string>
     <string name="manage_account_choose_mode_apply_label">Applica</string>
@@ -762,7 +762,7 @@
     <string name="notification_missed_calls">%s chiamate perse</string>
     <string name="notification_missed_call_title">Chiamata persa</string>
     <string name="notification_push_received_title">&appName;</string>
-    <string name="notification_push_received_message">Ricerca di nuovi messaggi</string>
+    <string name="notification_push_received_message">Verifica delle chiamate in arrivo</string>
     <string name="notification_file_transfer_title">&appName;</string>
     <string name="notification_file_transfer_startup_message">Trasferimento file in corso</string>
     <string name="notification_keep_app_alive_message">Tocca per aprire</string>
@@ -841,7 +841,7 @@
     <string name="help_about_privacy_policy_subtitle">Quali informazioni raccoglie e usa &appName;</string>
     <string name="help_about_version_title">Versione</string>
     <string name="help_about_check_for_update">Cerca aggiornamenti</string>
-    <string name="help_about_contribute_translations_subtitle">Aiutaci a rendere l\'app accessibile al maggior numero di persone.</string>
+    <string name="help_about_contribute_translations_subtitle">BizVoIP è software libero: il suo codice è pubblico.</string>
     <string name="help_about_advanced_title">Avanzate</string>
     <string name="help_version_up_to_date_toast_message">La versione è aggiornata</string>
     <string name="settings_user_interface_light_theme_label">Tema chiaro</string>
@@ -887,10 +887,10 @@
     <string name="assistant_account_login_error">Accesso non riuscito: codice di errore %s</string>
     <string name="assistant_account_login_credentials_error">Accesso non riuscito: controlla nome utente, password e dominio.</string>
     <string name="assistant_account_login_unreachable_error">Impossibile raggiungere il server. Controlla la connessione a Internet e riprova.</string>
-    <string name="assistant_permissions_read_contacts_title"><b>Lettura contatti:</b> per mostrare la rubrica e vedere chi usa &appName;.</string>
+    <string name="assistant_permissions_read_contacts_title"><b>Lettura contatti:</b> per mostrare la rubrica e il nome di chi ti chiama.</string>
     <string name="assistant_permissions_subtitle">Per sfruttare &appName; al meglio servono le autorizzazioni seguenti:</string>
     <string name="assistant_dialog_phone_number_validation_not_available_message">La verifica del numero di telefono non è disponibile: usa la creazione dell\'account tramite email.</string>
-    <string name="assistant_permissions_access_camera_title"><b>Accesso alla fotocamera:</b> per riprendere il video durante videochiamate e conferenze.</string>
+    <string name="assistant_permissions_access_camera_title"><b>Accesso alla fotocamera:</b> per inquadrare il codice QR che configura il tuo account.</string>
     <string name="assistant_forgotten_password_title">Recupero dell\'account</string>
     <string name="settings_security_enable_vfs_dialog_confirmation_message">Dopo l\'attivazione dovrai riavviare l\'app.\nDa quel momento tutti i dati saranno cifrati e accessibili solo tramite l\'applicazione.\n\nAttenzione: l\'operazione non è reversibile.</string>
     <string name="settings_security_prevent_screenshots_title">Impedisci la registrazione dello schermo</string>

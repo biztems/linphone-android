@@ -52,7 +52,6 @@
     <string name="notification_missed_calls">%s zmeškaných hovorov</string>
     <string name="notification_missed_call_title">Zmeškaný hovor</string>
     <string name="notification_push_received_title">&appName;</string>
-    <string name="notification_push_received_message">Hľadanie nových správ</string>
     <string name="notification_file_transfer_title">&appName;</string>
     <string name="notification_file_transfer_startup_message">Prebieha prenos súboru(-ov)</string>
     <plurals name="notification_file_transfer_upload">
@@ -114,9 +113,6 @@
     <string name="assistant_permissions_grant_all_of_them">OK</string>
     <string name="assistant_permissions_skip_permissions">Vykonať neskôr</string>
     <string name="assistant_permissions_subtitle">Pre plné využívanie &appName; potrebujeme udelenie nasledovných oprávnení:</string>
-    <string name="assistant_permissions_read_contacts_title"><b>Čítanie kontaktov:</b> Pre zobrazenie Vašich kontaktov a zistení, kto používa &appName;.</string>
-    <string name="assistant_permissions_post_notifications_title"><b>Odosielanie notifikácií:</b> Aby ste boli informovaný, keď obdržíte správa alebo hovor.</string>
-    <string name="assistant_permissions_access_camera_title"><b> Prístup ku kamere:</b> Pre zachytenie videa počas videohovorov a konferencií.</string>
     <string name="assistant_forgotten_password_title">Zabudnuté heslo</string>
     <string name="assistant_forgotten_password_subtitle">Zvoľte spôsob obnovy svojho účtu.</string>
     <string name="assistant_forgotten_password_message">Váš účet bol vytvorený pomocou:</string>
@@ -138,7 +134,6 @@
     <string name="help_about_title">O aplikácii &appName;</string>
     <string name="help_about_privacy_policy_title">Zásady ochrany súkromia</string>
     <string name="help_about_version_title">Verzia</string>
-    <string name="help_about_contribute_translations_subtitle">Pomôžte sprístupniť aplikáciu čo najväčšiemu počtu ľudí.</string>
     <string name="help_about_advanced_title">Pokročilé</string>
     <string name="help_version_up_to_date_toast_message">Vaša verzia je aktuálna</string>
     <string name="help_dialog_update_available_title">Je dostupná nová aktualizácia</string>
@@ -257,7 +252,6 @@
     <string name="manage_account_add_picture">Pridať obrázok</string>
     <string name="manage_account_edit_picture">Upraviť obrázok</string>
     <string name="manage_account_remove_picture">Odstrániť obrázok</string>
-    <string name="manage_account_status_cleared_summary">Účet bol zakázaný, nebudete môcť prijímať hovory ani správy.</string>
     <string name="manage_account_status_progress_summary">Účet sa pripája k serveru, prosím, čakajte…</string>
     <string name="manage_account_status_failed_summary">Pripojenie účtu zlyhalo, skontrolujte nastavenia.</string>
     <string name="manage_account_international_prefix">Medzinárodný prefix</string>
@@ -309,7 +303,6 @@
     <string name="contacts_change_filter_label">Zmeniť filter</string>
     <string name="contacts_list_favourites_title">Obľúbené</string>
     <string name="generic_address_picker_conversations_list_title">Konverzácie</string>
-    <string name="assistant_permissions_record_audio_title"><b>Nahrávanie zvuku:</b> Aby Vás osoba na druhej strane mohla počuť a aby ste mohli nahrávať hlasové správy.</string>
     <string name="help_troubleshooting_print_logs_in_logcat">Zapisovať záznamy do logcatu</string>
     <string name="help_troubleshooting_debug_logs_upload_error_toast_message">Chyba pri nahrávaní ladiacich záznamov</string>
     <string name="manage_account_dialog_international_prefix_help_message">Vyberte svoju krajinu, aby &appName; mohol správne spárovať Vaše kontakty.</string>
