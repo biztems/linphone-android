@@ -29,13 +29,16 @@ import org.linphone.LinphoneApplication.Companion.corePreferences
 import org.linphone.R
 import org.linphone.core.Account
 import org.linphone.core.AccountDevice
+import org.linphone.core.AccountListenerStub
 import org.linphone.core.AccountManagerServices
 import org.linphone.core.AccountManagerServicesRequest
 import org.linphone.core.AccountManagerServicesRequestListenerStub
 import org.linphone.core.Address
+import org.linphone.core.Core
 import org.linphone.core.DialPlan
 import org.linphone.core.Dictionary
 import org.linphone.core.Factory
+import org.linphone.core.RegistrationState
 import org.linphone.core.tools.Log
 import org.linphone.ui.GenericViewModel
 import org.linphone.ui.main.model.AccountModel
@@ -264,18 +267,65 @@ class AccountProfileViewModel
     fun deleteAccount() {
         coreContext.postOnCoreThread { core ->
             if (::account.isInitialized) {
-                val identity = account.params.identityAddress?.asStringUriOnly()
-                Log.w("$TAG Removing account [$identity] and all related data (auth info, conferences, conversations, call logs)")
-                core.removeAccountWithData(account)
-                accountRemovedEvent.postValue(Event(true))
-
-                if (core.accountList.isEmpty()) {
-                    Log.w("$TAG No more account found in Core")
-                    if (!core.provisioningUri.isNullOrEmpty()) {
-                        Log.w("$TAG Removing remote provisioning URI")
-                        core.provisioningUri = null
+                val target = account
+                // BizVoIP: unregister first, while the account still has its password, and remove it once the
+                // server has answered. Removing it at once took the password with it: the server's challenge to
+                // the un-REGISTER went unanswered, and the registration (with its pushes) stayed for 7 days.
+                when (target.state) {
+                    RegistrationState.Ok, RegistrationState.Progress, RegistrationState.Refreshing -> {
+                        Log.i("$TAG Unregistering account [${target.params.identityAddress?.asStringUriOnly()}] before removing it")
+                        var removed = false
+                        val listener = object : AccountListenerStub() {
+                            @WorkerThread
+                            override fun onRegistrationStateChanged(
+                                account: Account,
+                                state: RegistrationState?,
+                                message: String
+                            ) {
+                                if (state == RegistrationState.Cleared || state == RegistrationState.Failed ||
+                                    state == RegistrationState.None
+                                ) {
+                                    Log.i("$TAG Account registration is now [$state], removing it")
+                                    account.removeListener(this)
+                                    if (!removed) {
+                                        removed = true
+                                        removeAccount(core, target)
+                                    }
+                                }
+                            }
+                        }
+                        target.addListener(listener)
+                        val params = target.params.clone()
+                        params.isRegisterEnabled = false
+                        target.params = params
+                        // An unregistration that gets no answer doesn't keep the account
+                        coreContext.postOnCoreThreadDelayed({ c ->
+                            if (!removed) {
+                                Log.w("$TAG No answer to the un-REGISTER after 5 s, removing the account anyway")
+                                removed = true
+                                target.removeListener(listener)
+                                removeAccount(c, target)
+                            }
+                        }, 5000)
                     }
+                    else -> removeAccount(core, target)
                 }
+            }
+        }
+    }
+
+    @WorkerThread
+    private fun removeAccount(core: Core, target: Account) {
+        val identity = target.params.identityAddress?.asStringUriOnly()
+        Log.w("$TAG Removing account [$identity] and all related data (auth info, conferences, conversations, call logs)")
+        core.removeAccountWithData(target)
+        accountRemovedEvent.postValue(Event(true))
+
+        if (core.accountList.isEmpty()) {
+            Log.w("$TAG No more account found in Core")
+            if (!core.provisioningUri.isNullOrEmpty()) {
+                Log.w("$TAG Removing remote provisioning URI")
+                core.provisioningUri = null
             }
         }
     }
