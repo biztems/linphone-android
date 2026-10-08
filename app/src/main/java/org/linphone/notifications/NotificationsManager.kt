@@ -68,7 +68,6 @@ import org.linphone.core.CoreInCallService
 import org.linphone.core.CoreListenerStub
 import org.linphone.core.Factory
 import org.linphone.core.Friend
-import org.linphone.core.MediaDirection
 import org.linphone.core.RegistrationState
 import org.linphone.core.tools.Log
 import org.linphone.ui.call.CallActivity
@@ -909,22 +908,8 @@ class NotificationsManager
                     "$TAG RECORD_AUDIO permission has been granted, adding MICROPHONE to foreground Service types mask"
                 )
             }
-            val isSendingVideo = when (call.currentParams.videoDirection) {
-                MediaDirection.SendRecv, MediaDirection.SendOnly -> true
-                else -> false
-            }
-            if (call.currentParams.isVideoEnabled && isSendingVideo) {
-                if (ActivityCompat.checkSelfPermission(
-                        context,
-                        Manifest.permission.CAMERA
-                    ) == PackageManager.PERMISSION_GRANTED
-                ) {
-                    mask = mask or Compatibility.FOREGROUND_SERVICE_TYPE_CAMERA
-                    Log.i(
-                        "$TAG CAMERA permission has been granted, adding CAMERA to foreground Service types mask"
-                    )
-                }
-            }
+            // BizVoIP: no CAMERA type. Calls are audio only (video is off), and the manifest no longer declares the
+            // camera foreground service, which Google Play would want justified
         }
 
         if (Compatibility.isPostNotificationsPermissionGranted(context)) {
