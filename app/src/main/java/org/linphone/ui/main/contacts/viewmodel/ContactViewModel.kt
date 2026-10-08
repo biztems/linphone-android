@@ -260,8 +260,10 @@ class ContactViewModel
             chatDisabled.postValue(corePreferences.disableChat)
             videoCallDisabled.postValue(!core.isVideoEnabled)
 
-            val defaultDomain = LinphoneUtils.getDefaultAccount()?.params?.domain == corePreferences.defaultDomain
-            // Only show contact's devices for Linphone accounts
+            // Only show contact's devices for Linphone accounts. BizVoIP: and only while chat is on, as on iOS:
+            // the trust levels are about end-to-end encrypted messages
+            val defaultDomain = LinphoneUtils.getDefaultAccount()?.params?.domain == corePreferences.defaultDomain &&
+                !corePreferences.disableChat
             showContactTrustAndDevices.postValue(defaultDomain)
 
             expandDevicesTrust.postValue(defaultDomain)

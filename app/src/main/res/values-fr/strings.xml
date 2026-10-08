@@ -57,7 +57,6 @@
     <string name="notification_missed_calls">%s appels manqués</string>
     <string name="notification_missed_call_title">Appel manqué</string>
     <string name="notification_push_received_title">&appName;</string>
-    <string name="notification_push_received_message">Recherche de nouveaux messages</string>
     <string name="notification_file_transfer_title">&appName;</string>
     <string name="notification_file_transfer_startup_message">Transfert de fichier(s) en cours</string>
     <plurals name="notification_file_transfer_upload" tools:ignore="MissingQuantity">
@@ -134,10 +133,6 @@
     <string name="assistant_permissions_grant_all_of_them">OK</string>
     <string name="assistant_permissions_skip_permissions">Plus tard</string>
     <string name="assistant_permissions_subtitle">Pour vous permettre de profiter pleinement de &appName;, nous avons besoin des autorisations suivantes :</string>
-    <string name="assistant_permissions_read_contacts_title"><b>Contacts :</b> Pour afficher vos contacts et retrouver qui utilise &appName;.</string>
-    <string name="assistant_permissions_post_notifications_title"><b>Notifications :</b> Pour vous informer quand vous recevez un message ou un appel.</string>
-    <string name="assistant_permissions_record_audio_title"><b>Microphone :</b> Pour permettre à vos correspondants de vous entendre.</string>
-    <string name="assistant_permissions_access_camera_title"><b>Caméra :</b> Pour capturer votre vidéo lors des appels et des conférences.</string>
     <string name="assistant_permissions_access_local_network_title"><b>Accès au réseau local (optionnel):</b> Requis depuis Android 17 pour pouvoir se connecter à un serveur situé sur le réseau local.</string>
     <string name="assistant_forgotten_password_title">Récupération de compte</string>
     <string name="assistant_forgotten_password_subtitle">Choisissez comment récupérer votre compte.</string>
@@ -167,7 +162,6 @@
     <string name="help_about_privacy_policy_subtitle">Quelles informations &appName; collecte et utilise</string>
     <string name="help_about_version_title">Version</string>
     <string name="help_about_check_for_update">Vérifier les mises à jour</string>
-    <string name="help_about_contribute_translations_subtitle">Contribuez à rendre l\'application accessible au plus grand nombre.</string>
     <string name="help_about_advanced_title">Avancé</string>
     <string name="help_version_up_to_date_toast_message">Votre version est à jour</string>
     <string name="help_error_checking_version_toast_message">Une erreur est survenue</string>
@@ -344,7 +338,6 @@
     <string name="manage_account_status_registration_status_title">État de la connexion</string>
     <string name="manage_account_status_connected_summary">Vous êtes en ligne, on peut vous joindre.</string>
     <string name="manage_account_status_disconnected_summary">Vous êtes hors ligne, probablement car vous n\'êtes pas actuellement connecté à internet.</string>
-    <string name="manage_account_status_cleared_summary">Compte désactivé, vous ne recevrez ni appel ni message.</string>
     <string name="manage_account_status_progress_summary">Connexion en cours, merci de patienter…</string>
     <string name="manage_account_status_failed_summary">Erreur de connexion, vérifiez vos paramètres.</string>
     <string name="manage_account_international_prefix">Indicatif international</string>

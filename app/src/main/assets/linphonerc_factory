@@ -31,6 +31,9 @@ android_disable_audio_focus_requests=1
 android_monitor_audio_devices=0
 
 [video]
+# BizVoIP: audio only. The PBX carries no video, and with video off the video-call buttons are hidden.
+capture=0
+display=0
 displaytype=MSAndroidTextureDisplay
 auto_resize_preview_to_keep_ratio=1
 max_conference_size=vga
@@ -46,13 +49,14 @@ store_friends=0
 record_aware=1
 
 [ui]
-# biztems: brand theme; calls and contacts only; SIP accounts only, pre-filled with our gateway
+# biztems: brand theme; calls and contacts only; SIP accounts only. An account typed in by hand goes through
+# our gateway (Flexisip), so push wakes it too; its domain is the customer's, <company>.voip.biztems.it.
 theme_main_color=biztems
 disable_chat_feature=1
 disable_meetings_feature=1
 assistant_hide_create_account=1
 disable_linphone_accounts=1
-assistant_third_party_sip_account_domain=mobile.biztems.it:5065
+assistant_third_party_sip_account_proxy=mobile.biztems.it:5065
 
 [lime]
 lime_update_threshold=86400

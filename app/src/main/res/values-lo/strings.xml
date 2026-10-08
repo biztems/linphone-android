@@ -202,7 +202,6 @@
     <string name="manage_account_edit_picture">ແກ້ໄຂຮູບ</string>
     <string name="manage_account_remove_picture">ເອົາຮູບອອກ</string>
     <string name="manage_account_status_connected_summary">ບັນຊີນີ້ອອນລາຍຢູ່, ທຸກຄົນສາມາດໂທຫາເຈົ້າໄດ້.</string>
-    <string name="manage_account_status_cleared_summary">ບັນຊີຖືກປິດໃຊ້ງານ, ເຈົ້າຈະບໍ່ໄດ້ຮັບການໂທ ຫຼື ຂໍ້ຄວາມໃດໆ.</string>
     <string name="manage_account_status_progress_summary">ບັນຊີກຳລັງເຊື່ອມຕໍ່ຫາເຊີເວີ, ກະລຸນາຖ້າ…</string>
     <string name="manage_account_status_failed_summary">ເຊື່ອມຕໍ່ບັນຊີຫຼົ້ມເຫຼວ, ກະລຸນາກວດສອບການຕັ້ງຄ່າ.</string>
     <string name="manage_account_international_prefix">ລະຫັດປະເທດ</string>

@@ -75,12 +75,10 @@ class CorePreferences
             config.setInt("app", "config_version", value)
         }
 
-    @get:AnyThread @set:WorkerThread
-    var autoStart: Boolean
-        get() = config.getBool("app", "auto_start", true)
-        set(value) {
-            config.setBool("app", "auto_start", value)
-        }
+    // BizVoIP: no keep-alive foreground service, so nothing to start at boot either (see keepServiceAlive)
+    @get:AnyThread
+    val autoStart: Boolean
+        get() = false
 
     @get:AnyThread @set:WorkerThread
     var checkForUpdateServerUrl: String
@@ -103,12 +101,11 @@ class CorePreferences
             config.setBool("app", "publish_presence", value)
         }
 
-    @get:AnyThread @set:WorkerThread
-    var keepServiceAlive: Boolean
-        get() = config.getBool("app", "keep_service_alive", false)
-        set(value) {
-            config.setBool("app", "keep_service_alive", value)
-        }
+    // BizVoIP: always off, and the service is gone. Every BizVoIP account is woken by push through Flexisip,
+    // and Google Play would want the keep-alive service declared as a "special use" foreground service.
+    @get:AnyThread
+    val keepServiceAlive: Boolean
+        get() = false
 
     @get:AnyThread @set:WorkerThread
     var deviceName: String
@@ -451,6 +448,11 @@ class CorePreferences
     @get:AnyThread
     val thirdPartySipAccountDefaultDomain: String
         get() = config.getString("ui", "assistant_third_party_sip_account_domain", "")!!
+
+    // BizVoIP: the proxy and outbound proxy an account typed in by hand starts with (our Flexisip gateway)
+    @get:AnyThread
+    val thirdPartySipAccountDefaultProxy: String
+        get() = config.getString("ui", "assistant_third_party_sip_account_proxy", "")!!
 
     @get:AnyThread
     val assistantDirectlyGoToThirdPartySipAccountLogin: Boolean

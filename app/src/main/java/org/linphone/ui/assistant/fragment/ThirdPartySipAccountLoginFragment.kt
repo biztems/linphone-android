@@ -27,6 +27,7 @@ import android.telephony.TelephonyManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.activity.result.contract.ActivityResultContracts
@@ -108,6 +109,18 @@ class ThirdPartySipAccountLoginFragment : GenericFragment() {
 
         binding.viewModel = viewModel
         observeToastEvents(viewModel)
+
+        // BizVoIP: the keyboard's Go on the last field signs in, as the Login button does
+        binding.domain.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_GO && viewModel.loginEnabled.value == true &&
+                viewModel.registrationInProgress.value != true
+            ) {
+                viewModel.login()
+                true
+            } else {
+                false
+            }
+        }
 
         binding.setBackClickListener {
             goBack()

@@ -38,7 +38,6 @@
     <string name="notification_missed_calls">%s Llamadas perdidas</string>
     <string name="notification_missed_call_title">Llamada perdida</string>
     <string name="notification_push_received_title">&appName;</string>
-    <string name="notification_push_received_message">Buscando nuevos mensajes</string>
     <string name="notification_file_transfer_title">&appName;</string>
     <string name="authentication_id">ID de autenticación (si es diferente)</string>
     <plurals name="selection_count_label">
@@ -112,8 +111,6 @@
     <string name="assistant_permissions_title">Conceder permisos</string>
     <string name="assistant_permissions_grant_all_of_them">Ok</string>
     <string name="assistant_permissions_subtitle">Para disfrutar plenamente de &appName; necesitamos que nos concedas los siguientes permisos:</string>
-    <string name="assistant_permissions_post_notifications_title"><b>Notificaciones de publicaciones:</b> Para ser informado cuando recibes un mensaje o una llamada.</string>
-    <string name="assistant_permissions_record_audio_title"><b>Grabar audio:</b> Para que tu interlocutor pueda escucharte y grabar mensajes de voz.</string>
     <string name="assistant_forgotten_password_title">Contraseña olvidada</string>
     <string name="assistant_forgotten_password_subtitle">Elige cómo recuperar tu cuenta.</string>
     <string name="assistant_forgotten_password_message">Usted creó su cuenta usando:</string>
@@ -134,15 +131,12 @@
     <string name="help_title">Ayuda</string>
     <string name="help_about_title">Acerca de &appName;</string>
     <string name="assistant_account_register_unavailable_no_push_warning">Parece que las notificaciones push no están disponibles en tu dispositivo, pero son obligatorias para crear una cuenta en la app móvil.\n\nTe invitamos a crear una cuenta en nuestra plataforma web:</string>
-    <string name="assistant_permissions_read_contacts_title"><b>Leer contactos:</b> para mostrar tus contactos y encontrar quién está usando &appName;.</string>
     <string name="assistant_permissions_skip_permissions">Hazlo más tarde</string>
-    <string name="assistant_permissions_access_camera_title"><b>Acceso a Cámara:</b> Para capturar vídeo durante videollamadas y conferencias.</string>
     <string name="assistant_recover_phone_number_account_unavailable_no_push_warning">Las notificaciones push no parecen estar disponibles en su dispositivo, pero son obligatorias para recuperar una cuenta de número de teléfono en la aplicación móvil.</string>
     <string name="help_about_privacy_policy_title">Política de privacidad</string>
     <string name="help_about_privacy_policy_subtitle">Qué información recopila y utiliza &appName;</string>
     <string name="help_about_version_title">Versión</string>
     <string name="help_about_check_for_update">Comprobar actualización</string>
-    <string name="help_about_contribute_translations_subtitle">Ayude a que la aplicación sea accesible para la mayor cantidad de personas posible.</string>
     <string name="help_about_advanced_title">Avanzado</string>
     <string name="help_version_up_to_date_toast_message">Su versión esta actualizada</string>
     <string name="help_dialog_update_available_title">Actualización disponible</string>
@@ -270,7 +264,6 @@
     <string name="manage_account_edit_picture">Editar imagen</string>
     <string name="manage_account_remove_picture">Remover imagen</string>
     <string name="manage_account_status_connected_summary">Esta cuenta está en línea, cualquiera puede llamarte.</string>
-    <string name="manage_account_status_cleared_summary">La cuenta ha sido desactivada, no recibirás ninguna llamada ni mensaje.</string>
     <string name="manage_account_status_progress_summary">La cuenta se está conectando al servidor, por favor espere…</string>
     <string name="manage_account_status_failed_summary">Error al conectar la cuenta, comprueba tu configuración.</string>
     <string name="manage_account_international_prefix">Prefijo internacional</string>

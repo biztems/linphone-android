@@ -136,8 +136,6 @@ class CoreContext
         MutableLiveData()
     }
 
-    private var keepAliveServiceStarted = false
-
     private lateinit var proximityWakeLock: PowerManager.WakeLock
 
     @SuppressLint("HandlerLeak")
@@ -549,17 +547,11 @@ class CoreContext
                 "$TAG New account configured: [${account.params.identityAddress?.asStringUriOnly()}]"
             )
             if (!account.params.isPushNotificationAvailable) {
-                if (!corePreferences.keepServiceAlive) {
-                    Log.w(
-                        "$TAG Newly added account (or the whole Core) doesn't support push notifications, enabling keep-alive foreground service..."
-                    )
-                    corePreferences.keepServiceAlive = true
-                    startKeepAliveService()
-                } else {
-                    Log.i(
-                        "$TAG Newly added account (or the whole Core) doesn't support push notifications but keep-alive foreground service is already enabled, nothing to do"
-                    )
-                }
+                // BizVoIP: no keep-alive foreground service. Every BizVoIP account is woken by push through
+                // Flexisip, and Google Play would want the service declared as a "special use".
+                Log.w(
+                    "$TAG Newly added account (or the whole Core) doesn't support push notifications, it will only receive calls while the app runs"
+                )
             }
         }
 
@@ -791,15 +783,6 @@ class CoreContext
         notificationsManager.onCoreStarted(core, oldVersion < 600000) // Re-create channels when migrating from a non 6.0 version
         Log.i("$TAG Started contacts, telecom & notifications managers")
 
-        if (corePreferences.keepServiceAlive) {
-            if (activityMonitor.isInForeground() || corePreferences.autoStart) {
-                Log.i("$TAG Keep alive service is enabled and either app is in foreground or auto start is enabled, starting it")
-                startKeepAliveService()
-            } else {
-                Log.w("$TAG Keep alive service is enabled but auto start isn't and app is not in foreground, not starting it")
-            }
-        }
-
         val powerManager = context.getSystemService(POWER_SERVICE) as PowerManager
         if (!powerManager.isWakeLockLevelSupported(PowerManager.PROXIMITY_SCREEN_OFF_WAKE_LOCK)) {
             Log.w("$TAG PROXIMITY_SCREEN_OFF_WAKE_LOCK isn't supported on this device!")
@@ -929,10 +912,6 @@ class CoreContext
             if (corePreferences.publishPresence) {
                 Log.i("$TAG App is in foreground, PUBLISHING presence as Online")
                 core.consolidatedPresence = ConsolidatedPresence.Online
-            }
-
-            if (corePreferences.keepServiceAlive && !keepAliveServiceStarted) {
-                startKeepAliveService()
             }
         }
     }
@@ -1215,38 +1194,6 @@ class CoreContext
 
         val senderOptions = Compatibility.getPendingIntentActivityOptions(false)
         Compatibility.sendPendingIntent(pendingIntent, senderOptions.toBundle())
-    }
-
-    @WorkerThread
-    fun startKeepAliveService() {
-        if (keepAliveServiceStarted) {
-            Log.w("$TAG Keep alive service already started, skipping")
-        }
-
-        val serviceIntent = Intent(Intent.ACTION_MAIN).setClass(
-            context,
-            CoreKeepAliveThirdPartyAccountsService::class.java
-        )
-        Log.i("$TAG Starting Keep alive for third party accounts Service")
-        try {
-            context.startService(serviceIntent)
-            keepAliveServiceStarted = true
-        } catch (e: Exception) {
-            Log.e("$TAG Failed to start keep alive service: $e")
-        }
-    }
-
-    @WorkerThread
-    fun stopKeepAliveService() {
-        val serviceIntent = Intent(Intent.ACTION_MAIN).setClass(
-            context,
-            CoreKeepAliveThirdPartyAccountsService::class.java
-        )
-        Log.i(
-            "$TAG Stopping Keep alive for third party accounts Service"
-        )
-        context.stopService(serviceIntent)
-        keepAliveServiceStarted = false
     }
 
     @WorkerThread

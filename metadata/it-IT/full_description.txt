@@ -1,0 +1,13 @@
+BizVoIP è l'app gratuita per i clienti del servizio VoIP di Biztems: porta sul tuo smartphone il tuo interno aziendale.
+
+• Rispondi alle chiamate dell'ufficio ovunque ti trovi: arrivano anche con l'app chiusa, come una normale chiamata.
+• Chiama con il numero della tua azienda, come dal telefono della scrivania.
+• Chiamate protette: la connessione con il centralino è cifrata (TLS) e anche la voce viaggia cifrata (SRTP).
+• Rubrica e cronologia delle chiamate a portata di mano.
+• Si configura in un attimo: inquadra il codice QR che ti ha inviato Biztems.
+
+BizVoIP funziona solo con un account del servizio VoIP Biztems: chiedilo all'amministratore della tua azienda o a Biztems.
+
+Chiamate di emergenza: per il 112 e gli altri numeri di emergenza usa l'app Telefono del tuo smartphone.
+
+BizVoIP è software libero, basato su Linphone di Belledonne Communications. Il codice sorgente è su github.com/biztems.

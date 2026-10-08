@@ -92,6 +92,11 @@ class ThirdPartySipAccountLoginViewModel
     private lateinit var newlyCreatedAuthInfo: AuthInfo
     private lateinit var newlyCreatedAccount: Account
 
+    // BizVoIP: an attempt still waiting for its registration, and which attempt it is, so that a timeout or
+    // leaving the form ends it (core thread only)
+    private var awaitingRegistration = false
+    private var loginAttempt = 0
+
     private val coreListener = object : CoreListenerStub() {
         @WorkerThread
         override fun onAccountRegistrationStateChanged(
@@ -104,6 +109,7 @@ class ThirdPartySipAccountLoginViewModel
                 Log.i("$TAG Newly created account registration state is [$state] ($message)")
 
                 if (state == RegistrationState.Ok) {
+                    awaitingRegistration = false
                     registrationInProgress.postValue(false)
                     core.removeListener(this)
 
@@ -111,27 +117,28 @@ class ThirdPartySipAccountLoginViewModel
                     core.defaultAccount = newlyCreatedAccount
                     accountLoggedInEvent.postValue(Event(true))
                 } else if (state == RegistrationState.Failed) {
+                    awaitingRegistration = false
                     registrationInProgress.postValue(false)
                     core.removeListener(this)
 
-                    val error = when (account.error) {
-                        Reason.Forbidden -> {
-                            AppUtils.getString(R.string.assistant_account_login_forbidden_error)
-                        }
-                        else -> {
-                            AppUtils.getFormattedString(
-                                R.string.assistant_account_login_error,
-                                account.error.toString()
-                            )
-                        }
+                    // BizVoIP: say what to check, as on iOS, rather than the SDK's reason code. The details
+                    // are wrong when the server refuses them (403, 401) or doesn't know the account (404);
+                    // anything else is the server out of reach
+                    val wrongDetails = when (account.error) {
+                        Reason.Forbidden, Reason.Unauthorized, Reason.NotFound -> true
+                        else -> false
                     }
+                    val error = AppUtils.getString(
+                        if (wrongDetails) {
+                            R.string.assistant_account_login_credentials_error
+                        } else {
+                            R.string.assistant_account_login_unreachable_error
+                        }
+                    )
                     accountLoginErrorEvent.postValue(Event(error))
 
-                    Log.e("$TAG Account failed to REGISTER [$message], removing it")
-                    // biztems: the core keeps a copy of newlyCreatedAuthInfo, so removing our own
-                    // object failed and the rejected password was reused on every retry
-                    account.findAuthInfo()?.let { core.removeAuthInfo(it) }
-                    core.removeAccount(newlyCreatedAccount)
+                    Log.e("$TAG Account failed to REGISTER [$message] (${account.error}), removing it")
+                    removeNewlyCreatedAccount(core)
                 }
             }
         }
@@ -143,6 +150,9 @@ class ThirdPartySipAccountLoginViewModel
         registrationInProgress.value = false
 
         loginEnabled.addSource(username) {
+            loginEnabled.value = isLoginButtonEnabled()
+        }
+        loginEnabled.addSource(password) {
             loginEnabled.value = isLoginButtonEnabled()
         }
         loginEnabled.addSource(domain) {
@@ -157,6 +167,10 @@ class ThirdPartySipAccountLoginViewModel
 
         coreContext.postOnCoreThread {
             domain.postValue(corePreferences.thirdPartySipAccountDefaultDomain)
+            // BizVoIP: through our Flexisip gateway, which wakes the app with a push for incoming calls
+            val defaultProxy = corePreferences.thirdPartySipAccountDefaultProxy
+            proxy.postValue(defaultProxy)
+            outboundProxy.postValue(defaultProxy)
 
             val defaultTransport = corePreferences.thirdPartySipAccountDefaultTransport.uppercase(
                 Locale.getDefault()
@@ -171,7 +185,31 @@ class ThirdPartySipAccountLoginViewModel
     }
 
     @UiThread
+    override fun onCleared() {
+        // BizVoIP: leaving the form while an attempt still waits for its registration ends the attempt, so a
+        // later failure can't delete an account behind the user's back
+        coreContext.postOnCoreThread { core ->
+            core.removeListener(coreListener)
+            if (awaitingRegistration) {
+                Log.w("$TAG Leaving the form while the new account is still registering, removing it")
+                awaitingRegistration = false
+                removeNewlyCreatedAccount(core)
+            }
+        }
+        super.onCleared()
+    }
+
+    @UiThread
     fun login() {
+        // BizVoIP: a username written as 201@azienda.voip.biztems.it (with or without sip:) brings its own
+        // domain, as on iOS
+        var typedUser = username.value.orEmpty().trim().removePrefix("sips:").removePrefix("sip:")
+        if (typedUser.contains("@")) {
+            domain.value = typedUser.substringAfter("@")
+            typedUser = typedUser.substringBefore("@")
+        }
+        username.value = typedUser
+
         coreContext.postOnCoreThread { core ->
             core.loadConfigFromXml(corePreferences.thirdPartyDefaultValuesPath)
 
@@ -303,7 +341,31 @@ class ThirdPartySipAccountLoginViewModel
             registrationInProgress.postValue(true)
             core.addListener(coreListener)
             core.addAccount(newlyCreatedAccount)
+
+            // BizVoIP: a registration that gets no answer at all still gives the form back
+            awaitingRegistration = true
+            val attempt = ++loginAttempt
+            coreContext.postOnCoreThreadDelayed({ c ->
+                if (attempt == loginAttempt && awaitingRegistration) {
+                    Log.e("$TAG No answer to the new account's REGISTER after 40 s, removing it")
+                    awaitingRegistration = false
+                    registrationInProgress.postValue(false)
+                    c.removeListener(coreListener)
+                    removeNewlyCreatedAccount(c)
+                    accountLoginErrorEvent.postValue(
+                        Event(AppUtils.getString(R.string.assistant_account_login_unreachable_error))
+                    )
+                }
+            }, 40000)
         }
+    }
+
+    @WorkerThread
+    private fun removeNewlyCreatedAccount(core: Core) {
+        // biztems: the core keeps a copy of newlyCreatedAuthInfo, so removing our own
+        // object failed and the rejected password was reused on every retry
+        newlyCreatedAccount.findAuthInfo()?.let { core.removeAuthInfo(it) }
+        core.removeAccount(newlyCreatedAccount)
     }
 
     @UiThread
@@ -313,8 +375,10 @@ class ThirdPartySipAccountLoginViewModel
 
     @UiThread
     private fun isLoginButtonEnabled(): Boolean {
-        // Password isn't mandatory as authentication could be Bearer
-        return username.value.orEmpty().isNotEmpty() && domain.value.orEmpty().isNotEmpty()
+        // BizVoIP: every account has a password; the domain can come with the username (201@azienda...)
+        val user = username.value.orEmpty().trim()
+        return user.isNotEmpty() && password.value.orEmpty().trim().isNotEmpty() &&
+            (domain.value.orEmpty().trim().isNotEmpty() || user.contains("@"))
     }
 
     @UiThread

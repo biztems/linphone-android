@@ -65,7 +65,6 @@ import org.linphone.core.ChatRoom
 import org.linphone.core.ConferenceParams
 import org.linphone.core.Core
 import org.linphone.core.CoreInCallService
-import org.linphone.core.CoreKeepAliveThirdPartyAccountsService
 import org.linphone.core.CoreListenerStub
 import org.linphone.core.Factory
 import org.linphone.core.Friend
@@ -91,7 +90,6 @@ class NotificationsManager
         const val INTENT_TOGGLE_SPEAKER_CALL_NOTIF_ACTION = "org.linphone.TOGGLE_SPEAKER_CALL_ACTION"
         const val INTENT_REPLY_MESSAGE_NOTIF_ACTION = "org.linphone.REPLY_ACTION"
         const val INTENT_MARK_MESSAGE_AS_READ_NOTIF_ACTION = "org.linphone.MARK_AS_READ_ACTION"
-        const val INTENT_FOREGROUND_SERVICE_NOTIF_DISMISSED_ACTION = "org.linphone.INTENT_FOREGROUND_SERVICE_NOTIF_DISMISSED_ACTION"
 
         const val INTENT_ANSWER_CALL_NOTIF_CODE = 2
         const val INTENT_HANGUP_CALL_NOTIF_CODE = 3
@@ -119,7 +117,6 @@ class NotificationsManager
     }
 
     private var currentInCallServiceNotificationId = -1
-    private var currentKeepAliveThirdPartyAccountsForegroundServiceNotificationId = -1
 
     private var currentlyRingingCallRemoteAddress: Address? = null
 
@@ -130,8 +127,6 @@ class NotificationsManager
     private var inCallService: CoreInCallService? = null
     private var inCallServiceForegroundNotificationPublished = false
     private var waitForInCallServiceForegroundToStopIt = false
-
-    private var keepAliveService: CoreKeepAliveThirdPartyAccountsService? = null
 
     private val callNotificationsMap: HashMap<String, Notifiable> = HashMap()
     private val chatNotificationsMap: HashMap<String, Notifiable> = HashMap()
@@ -600,20 +595,6 @@ class NotificationsManager
     }
 
     @MainThread
-    fun onKeepAliveServiceStarted(service: CoreKeepAliveThirdPartyAccountsService) {
-        Log.i("$TAG Keep app alive for third party accounts Service has been started")
-        keepAliveService = service
-        startKeepAliveServiceForeground()
-    }
-
-    @MainThread
-    fun onKeepAliveServiceDestroyed() {
-        Log.i("$TAG Keep app alive for third party accounts Service has been destroyed")
-        stopKeepAliveServiceForeground()
-        keepAliveService = null
-    }
-
-    @MainThread
     private fun createChannels(clearPreviousChannels: Boolean) {
         if (clearPreviousChannels) {
             Log.w("$TAG We were asked to remove all existing notification channels")
@@ -638,7 +619,6 @@ class NotificationsManager
             }
         }
 
-        createThirdPartyAccountKeepAliveServiceChannel()
         createIncomingCallNotificationChannelWithoutRingtone()
         createMissedCallNotificationChannel()
         createActiveCallNotificationChannel()
@@ -1868,102 +1848,6 @@ class NotificationsManager
     }
 
     @MainThread
-    private fun startKeepAliveServiceForeground() {
-        Log.i(
-            "$TAG Trying to start keep alive for third party accounts foreground Service using call notification"
-        )
-
-        val channelId = context.getString(R.string.notification_channel_service_id)
-        val channel = notificationManager.getNotificationChannel(channelId)
-        val importance = channel?.importance ?: NotificationManagerCompat.IMPORTANCE_NONE
-        if (importance == NotificationManagerCompat.IMPORTANCE_NONE) {
-            Log.e(
-                "$TAG Keep alive for third party accounts Service channel has been disabled, can't start foreground Service!"
-            )
-            return
-        }
-
-        val service = keepAliveService
-        if (service != null) {
-            val pendingIntent = TaskStackBuilder.create(context).run {
-                addNextIntentWithParentStack(
-                    Intent(context, MainActivity::class.java).apply {
-                        action = Intent.ACTION_MAIN // Needed as well
-                    }
-                )
-                getPendingIntent(
-                    KEEP_ALIVE_FOR_THIRD_PARTY_ACCOUNTS_ID,
-                    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
-                )!!
-            }
-
-            val builder = NotificationCompat.Builder(context, channelId)
-                .setSmallIcon(R.drawable.linphone_notification)
-                .setContentText(AppUtils.getString(R.string.notification_keep_app_alive_description))
-                .setSubText(AppUtils.getString(R.string.notification_keep_app_alive_message))
-                .setAutoCancel(false)
-                .setOngoing(true)
-                .setCategory(NotificationCompat.CATEGORY_SERVICE)
-                .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
-                .setPriority(NotificationCompat.PRIORITY_LOW)
-                .setShowWhen(false)
-                .setContentIntent(pendingIntent)
-                .setDeleteIntent(getForegroundServiceDismissedIntent())
-            val notification = builder.build()
-
-            Log.i(
-                "$TAG Keep alive for third party accounts Service found, starting it as foreground using notification ID [$KEEP_ALIVE_FOR_THIRD_PARTY_ACCOUNTS_ID] with type [SPECIAL_USE]"
-            )
-            val success = Compatibility.startServiceForeground(
-                service,
-                KEEP_ALIVE_FOR_THIRD_PARTY_ACCOUNTS_ID,
-                notification,
-                Compatibility.FOREGROUND_SERVICE_TYPE_SPECIAL_USE
-            )
-            if (!success) {
-                Log.e("$TAG Failed to start keep alive foreground Service!")
-            }
-            currentKeepAliveThirdPartyAccountsForegroundServiceNotificationId = KEEP_ALIVE_FOR_THIRD_PARTY_ACCOUNTS_ID
-        } else {
-            Log.w("$TAG Keep alive for third party accounts Service hasn't started yet...")
-        }
-    }
-
-    @AnyThread
-    private fun getForegroundServiceDismissedIntent(): PendingIntent {
-        val foregroundServiceDismissedIntent = Intent(
-            context,
-            CoreKeepAliveThirdPartyAccountsService::class.java
-        ).apply {
-            action = INTENT_FOREGROUND_SERVICE_NOTIF_DISMISSED_ACTION
-        }
-
-        return PendingIntent.getService(
-            context,
-            KEEP_ALIVE_FOR_THIRD_PARTY_ACCOUNTS_ID,
-            foregroundServiceDismissedIntent,
-            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
-        )
-    }
-
-    @MainThread
-    private fun stopKeepAliveServiceForeground() {
-        val service = keepAliveService
-        if (service != null) {
-            Log.i(
-                "$TAG Stopping keep alive for third party accounts foreground Service (was using notification ID [$currentKeepAliveThirdPartyAccountsForegroundServiceNotificationId])"
-            )
-            service.stopForeground(STOP_FOREGROUND_REMOVE)
-            service.stopSelf()
-        } else {
-            Log.w(
-                "$TAG Can't stop keep alive for third party accounts foreground Service & notif, no Service was found"
-            )
-        }
-        currentKeepAliveThirdPartyAccountsForegroundServiceNotificationId = -1
-    }
-
-    @MainThread
     private fun createIncomingCallNotificationChannelWithoutRingtone() {
         val id = context.getString(R.string.notification_channel_without_ringtone_incoming_call_id)
         val name = context.getString(R.string.notification_channel_incoming_call_name)
@@ -2017,20 +1901,6 @@ class NotificationsManager
             enableLights(true)
             enableVibration(true)
             setShowBadge(true)
-        }
-        notificationManager.createNotificationChannel(channel)
-    }
-
-    @MainThread
-    private fun createThirdPartyAccountKeepAliveServiceChannel() {
-        val id = context.getString(R.string.notification_channel_service_id)
-        val name = context.getString(R.string.notification_channel_service_name)
-
-        val channel = NotificationChannel(id, name, NotificationManager.IMPORTANCE_LOW).apply {
-            description = context.getString(R.string.notification_channel_service_desc)
-            enableLights(false)
-            enableVibration(false)
-            setShowBadge(false)
         }
         notificationManager.createNotificationChannel(channel)
     }

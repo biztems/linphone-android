@@ -68,7 +68,6 @@
     <string name="notification_missed_calls">%s пропущено викликів</string>
     <string name="notification_missed_call_title">Пропущений виклик</string>
     <string name="notification_push_received_title">&appName;</string>
-    <string name="notification_push_received_message">Пошук нових повідомлень</string>
     <string name="notification_file_transfer_title">&appName;</string>
     <string name="notification_file_transfer_startup_message">Триває передача файлів</string>
     <plurals name="notification_file_transfer_upload">
@@ -233,10 +232,6 @@
     <string name="content_description_play_pause_audio_playback">Починає/призупиняє відтворення аудіо</string>
     <string name="conversation_no_app_registered_to_handle_content_type_dialog_message">Не знайдено жодної програми для відкриття цього типу файлу.\n\nСпробувати відкрити його як звичайний текстовий файл?</string>
     <string name="conversation_no_app_registered_to_handle_content_type_error_toast">Не знайдено програми для відкриття цього типу файлу</string>
-    <string name="assistant_permissions_read_contacts_title"><b>Читати контакти:</b> Для відображення своїх контактів та знайти тих, хто користується &appName;.</string>
-    <string name="assistant_permissions_post_notifications_title"><b>Сповіщення про публікації:</b>Щоб бути в курсі отримання повідомлення або дзвінка.</string>
-    <string name="assistant_permissions_record_audio_title"><b>Запис аудіо:</b> Щоб ваш співрозмовник міг вас чути та записувати голосові повідомлення.</string>
-    <string name="assistant_permissions_access_camera_title"><b>Доступ до камери:</b> Для запису відео під час відеодзвінків та конференцій.</string>
     <string name="generic_address_picker_contacts_list_title">Контакти</string>
     <string name="contact_sms_invite_content">Привіт, приєднуйтесь до мене на &appName;! Ви можете завантажити його безкоштовно за адресою %s</string>
     <string name="generic_address_picker_favorites_list_title">Обрані</string>
@@ -360,7 +355,6 @@
     <string name="manage_account_empty_devices_label">Пристрій не знайдено…</string>
     <string name="manage_account_add_picture">Додати зображення</string>
     <string name="manage_account_remove_picture">Видалити зображення</string>
-    <string name="manage_account_status_cleared_summary">Обліковий запис вимкнуто, ви не отримуватимете вхідних дзвінків чи повідомлень.</string>
     <string name="manage_account_status_progress_summary">Обліковий запис підключається до сервера, будь ласка, зачекайте…</string>
     <string name="content_description_conference_participant_muted">Учаснику вимкнено звук</string>
     <string name="manage_account_dialog_international_prefix_help_message">Оберіть свою країну, щоб &appName; міг зіставляти ваші контакти.</string>
@@ -830,7 +824,6 @@
     </plurals>
     <string name="network_not_reachable">Відсутнє підключення до Інтернету</string>
     <string name="operation_in_progress_overlay">Операція триває, будь ласка, зачекайте</string>
-    <string name="help_about_contribute_translations_subtitle">Допоможіть зробити застосунок доступним для якомога більшої кількості людей.</string>
     <string name="help_troubleshooting_subtitle">Надсилайте свої діагностичні журнали для полегшення вирішення помилок.</string>
     <string name="content_description_cancel_files_or_text_pending_sharing">Натисніть, щоб скасувати обмін файлами або текстом, що очікує надсилання</string>
     <string name="settings_contacts_ldap_enabled_title">Увімкнуто</string>

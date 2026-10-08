@@ -32,7 +32,6 @@
     <string name="remote_provisioning_config_failed_toast">Došlo k chybě při pokusu o stažení a použití vzdálené konfigurace</string>
     <string name="assistant_third_party_sip_account_warning_explanation">Některé funkce jako skupinové zprávy nebo videokonference vyžadují účet &appName;\n\nTyto funkce jsou skryté, pokud se zaregistrujete pomocí SIP účtu třetí strany.\n\nPro aktivaci v komerčním projektu nás prosím kontaktujte.</string>
     <string name="assistant_permissions_subtitle">Pro plné využívání &appName; potřebujeme, abyste nám udělili následující oprávnění:</string>
-    <string name="assistant_permissions_record_audio_title"><b>Nahrávání zvuku:</b> Aby Vás váš protějšek slyšel a pro nahrávání hlasových zpráv.</string>
     <string name="help_about_version_title">Verze</string>
     <string name="help_about_check_for_update">Kontrola aktualizací</string>
     <string name="help_troubleshooting_share_logs">Sdílet logy</string>
@@ -60,7 +59,6 @@
     <string name="assistant_recover_phone_number_account_unavailable_no_push_warning">Push notifikace se na vašem zařízení nezdají být dostupné, ale jsou nezbytné pro obnovení účtu s telefonním číslem v mobilní aplikaci.</string>
     <string name="export_file_to_media_store_error_toast">Chyba při exportování souboru do systémové galerie</string>
     <string name="media_player_generic_error_toast">Chyba při pokusu o vytvoření přehrávače médií</string>
-    <string name="assistant_permissions_post_notifications_title"><b>Odesílání notifikací:</b> Abyste byli informováni, když obdržíte zprávu nebo hovor.</string>
     <string name="conversation_failed_to_create_toast">Vytvoření konverzace se nezdařilo!</string>
     <string name="conversation_ephemeral_messages_enabled_toast">Mizející zprávy byly povoleny</string>
     <string name="conversation_no_app_registered_to_handle_content_type_error_toast">Nenalezena žádná aplikace k otevření tohoto typu souboru</string>
@@ -124,7 +122,6 @@
     <string name="call_waiting_for_encryption_info">Čeká se na šifrování…</string>
     <string name="calls_list_dialog_merge_into_conference_title">Propojit všechny hovory do konference?</string>
     <string name="content_description_chat_bubble_video">Video přiloženo ke zprávě</string>
-    <string name="manage_account_status_cleared_summary">Účet byl zakázán, nebudete moci příjímat hovory ani zprávy.</string>
     <string name="manage_account_status_progress_summary">Účet se připojuje, prosím počkejte…</string>
     <string name="account_settings_dialog_invalid_password_message">Připojení se nezdařilo, protože chybí nebo je neplatné ověření účtu\n%s.\n\nMůžete znovu zadat heslo nebo zkontrolovat nastavení účtu v konfiguraci.</string>
     <string name="history_dialog_delete_all_call_logs_message">Z historie budou odstraněny všechny hovory.</string>
@@ -170,7 +167,6 @@
     <string name="notification_missed_calls">%s zmeškaných hovorů</string>
     <string name="notification_missed_call_title">Zmeškaný hovor</string>
     <string name="notification_push_received_title">&appName;</string>
-    <string name="notification_push_received_message">Hledání nových zpráv</string>
     <string name="notification_file_transfer_title">&appName;</string>
     <string name="notification_file_transfer_startup_message">Probíhá přenos souboru/souborů</string>
     <plurals name="notification_file_transfer_download">
@@ -218,8 +214,6 @@
     <string name="assistant_permissions_title">Udělit oprávnění</string>
     <string name="assistant_permissions_grant_all_of_them">OK</string>
     <string name="assistant_permissions_skip_permissions">Provést později</string>
-    <string name="assistant_permissions_read_contacts_title"><b>Čtení kontaktů:</b> Pro zobrazení vašich kontaktů a zjištění, kdo používá &appName;.</string>
-    <string name="assistant_permissions_access_camera_title"><b>Přístup ke kameře:</b> Pro zachycení videa během videohovorů a konferencí.</string>
     <string name="assistant_forgotten_password_title">Zapomenuté heslo</string>
     <string name="assistant_forgotten_password_subtitle">Zvolte způsob obnovy svého účtu.</string>
     <string name="assistant_forgotten_password_message">Váš účet byl vytvořen pomocí:</string>
@@ -821,7 +815,6 @@
     <string name="settings_advanced_logs_upload_server_url">Adresa URL serveru pro sdílení logů</string>
     <string name="contacts_list_sip_empty">Momentálně žádný SIP kontakt…</string>
     <string name="contacts_change_filter_label">Změnit filtr</string>
-    <string name="help_about_contribute_translations_subtitle">Pomozte zpřístupnit aplikaci co největšímu počtu lidí.</string>
     <string name="help_troubleshooting_subtitle">Předejte své diagnostické protokoly, abyste usnadnili řešení chyb.</string>
     <string name="content_description_cancel_files_or_text_pending_sharing">Kliknutím zrušíte soubory nebo text čekající na sdílení</string>
     <string name="settings_contacts_ldap_enabled_title">Zapnuto</string>
