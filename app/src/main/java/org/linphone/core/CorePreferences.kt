@@ -449,6 +449,11 @@ class CorePreferences
         get() = config.getString("ui", "assistant_third_party_sip_account_transport", "tls")!!
 
     @get:AnyThread
+    // BizVoIP: the proxy and outbound proxy an account typed in by hand starts with (our Flexisip gateway)
+    @get:AnyThread
+    val thirdPartySipAccountDefaultProxy: String
+        get() = config.getString("ui", "assistant_third_party_sip_account_proxy", "")!!
+
     val thirdPartySipAccountDefaultDomain: String
         get() = config.getString("ui", "assistant_third_party_sip_account_domain", "")!!
 

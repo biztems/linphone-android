@@ -183,6 +183,9 @@
     <string name="assistant_account_register_unexpected_error">Unexpected error occurred, please try again later</string>
     <string name="assistant_account_login_forbidden_error">Wrong username or password</string>
     <string name="assistant_account_login_error">Failed to login: error code is %s</string>
+    <string name="assistant_account_login_credentials_error">Sign-in failed: check the username, password and domain.</string>
+    <string name="assistant_account_login_unreachable_error">Could not reach the server. Check your internet connection and try again.</string>
+    <string name="assistant_third_party_domain_hint" translatable="false">azienda.voip.biztems.it</string>
     <string name="assistant_permissions_title">Grant permissions</string>
     <string name="assistant_permissions_grant_all_of_them">OK</string>
     <string name="assistant_permissions_skip_permissions">Do it later</string>

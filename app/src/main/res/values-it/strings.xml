@@ -885,6 +885,8 @@
     <string name="assistant_account_register_unexpected_error">Si è verificato un errore imprevisto. Riprova più tardi.</string>
     <string name="assistant_account_login_forbidden_error">Nome utente o password errati</string>
     <string name="assistant_account_login_error">Accesso non riuscito: codice di errore %s</string>
+    <string name="assistant_account_login_credentials_error">Accesso non riuscito: controlla nome utente, password e dominio.</string>
+    <string name="assistant_account_login_unreachable_error">Impossibile raggiungere il server. Controlla la connessione a Internet e riprova.</string>
     <string name="assistant_permissions_read_contacts_title"><b>Lettura contatti:</b> per mostrare la rubrica e vedere chi usa &appName;.</string>
     <string name="assistant_permissions_subtitle">Per sfruttare &appName; al meglio servono le autorizzazioni seguenti:</string>
     <string name="assistant_dialog_phone_number_validation_not_available_message">La verifica del numero di telefono non è disponibile: usa la creazione dell\'account tramite email.</string>
