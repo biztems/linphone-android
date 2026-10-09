@@ -122,6 +122,7 @@
 
         <ImageView
             android:id="@+id/chat"
+            android:visibility="@{viewModel.isChatEnabled ? View.VISIBLE : View.GONE}"
             android:onClick="@{() -> viewModel.createConversation()}"
             android:layout_width="0dp"
             android:layout_height="@dimen/call_button_size"
@@ -251,6 +252,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             style="@style/in_call_extra_action_label_style"
             android:id="@+id/chat_label"
+            android:visibility="@{viewModel.isChatEnabled ? View.VISIBLE : View.GONE}"
             android:onClick="@{() -> viewModel.createConversation()}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
