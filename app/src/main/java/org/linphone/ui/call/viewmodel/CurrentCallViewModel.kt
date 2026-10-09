@@ -104,6 +104,9 @@ class CurrentCallViewModel
 
     val isRecordingEnabled = MutableLiveData<Boolean>()
 
+    // BizVoIP: chat is off, so the in-call actions offer no Messages button
+    val isChatEnabled = MutableLiveData<Boolean>()
+
     val isRecording = MutableLiveData<Boolean>()
 
     val canBePaused = MutableLiveData<Boolean>()
@@ -545,6 +548,7 @@ class CurrentCallViewModel
             core.addListener(coreListener)
 
             isRecordingEnabled.postValue(!corePreferences.disableCallRecordings)
+            isChatEnabled.postValue(!corePreferences.disableChat)
             hideVideo.postValue(!core.isVideoEnabled)
             showSwitchCamera.postValue(coreContext.showSwitchCameraButton())
 
