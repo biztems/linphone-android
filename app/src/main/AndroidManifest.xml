@@ -55,9 +55,12 @@
         tools:targetApi="35">
 
         <!-- Required for chat message & call notifications to be displayed in Android auto -->
-        <meta-data
+        <!-- BizVoIP: no Android Auto. Google Play rejected 100002 (30 Oct 2026) as an Android Auto app with no
+             valid category in a CarAppService, and the calling one is commented out below: this entry alone made
+             it one. Chat is off, so only call notifications on a car's screen go. -->
+        <!--<meta-data
             android:name="com.google.android.gms.car.application"
-            android:resource="@xml/automotive_app_desc"/>
+            android:resource="@xml/automotive_app_desc"/>-->
 
         <!--<meta-data
             android:name="androidx.car.app.minCarApiLevel"
