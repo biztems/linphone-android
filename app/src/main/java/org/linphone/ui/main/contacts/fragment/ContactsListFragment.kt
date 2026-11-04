@@ -21,8 +21,10 @@ package org.linphone.ui.main.contacts.fragment
 
 import android.Manifest
 import android.content.ActivityNotFoundException
+import android.content.ContentValues
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.database.Cursor
 import android.os.Bundle
 import android.provider.ContactsContract
 import android.view.Gravity
@@ -38,6 +40,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.loader.app.LoaderManager
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -102,6 +105,58 @@ class ContactsListFragment : AbstractMainFragment() {
     override fun onSlidingPaneClosed() {
         listViewModel.currentlyDisplayedItemId = ""
         allContactsAdapter.resetSelection()
+    }
+
+    // BizVoIP: a new contact goes into the phone's address book, through the phone's own contact editor, so it is in
+    // the phone's Contacts and survives the app; the app then shows it like any other phone contact (the loader
+    // reloads when the address book changes). Without the permission to read the phone's contacts the app couldn't
+    // show it, so it stays in the app's own address book, as before, and so it does if no editor is installed.
+    // A number of 6 digits or more is saved as a phone number; a short extension (201) as a SIP address, so that the
+    // phone's own dialer doesn't call it over the mobile network.
+    private fun openPhoneContactEditor(): Boolean {
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_CONTACTS) !=
+            PackageManager.PERMISSION_GRANTED
+        ) {
+            Log.i("$TAG READ_CONTACTS not granted, keeping the new contact in the app's own address book")
+            return false
+        }
+
+        // The app shows phone contacts once its loader runs: from the first registration on, or once the app itself
+        // asked for the permission. Access granted later in the phone's settings starts nothing, so start it here, or
+        // the contact saved there would show only after a restart.
+        val activity = requireActivity()
+        if (activity is MainActivity && LoaderManager.getInstance(activity).getLoader<Cursor>(0) == null) {
+            Log.i("$TAG Phone contacts not loaded yet, starting the loader")
+            activity.loadContacts()
+        }
+
+        val address = sharedViewModel.sipAddressToAddToNewContact.removePrefix("sip:").removePrefix("sips:")
+        val user = address.substringBefore("@").substringBefore(";")
+        val intent = Intent(ContactsContract.Intents.Insert.ACTION).apply {
+            type = ContactsContract.RawContacts.CONTENT_TYPE
+            putExtra("finishActivityOnSaveCompleted", true) // back to the app once saved
+            if (Regex("^\\+?[0-9]{6,}$").matches(user)) {
+                putExtra(ContactsContract.Intents.Insert.PHONE, user)
+            } else if (address.isNotEmpty()) {
+                val sip = ContentValues().apply {
+                    put(
+                        ContactsContract.Data.MIMETYPE,
+                        ContactsContract.CommonDataKinds.SipAddress.CONTENT_ITEM_TYPE
+                    )
+                    put(ContactsContract.CommonDataKinds.SipAddress.SIP_ADDRESS, address)
+                }
+                putParcelableArrayListExtra(ContactsContract.Intents.Insert.DATA, arrayListOf(sip))
+            }
+        }
+        return try {
+            startActivity(intent)
+            sharedViewModel.sipAddressToAddToNewContact = ""
+            Log.i("$TAG Opened the phone's contact editor for creating new contact")
+            true
+        } catch (anfe: ActivityNotFoundException) {
+            Log.w("$TAG No contact editor on this phone, keeping the new contact in the app: $anfe")
+            false
+        }
     }
 
     override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): Animation? {
@@ -221,6 +276,7 @@ class ContactsListFragment : AbstractMainFragment() {
         sharedViewModel.showNewContactEvent.observe(viewLifecycleOwner) {
             it.consume {
                 if (findNavController().currentDestination?.id == R.id.contactsListFragment) {
+                    if (openPhoneContactEditor()) return@consume
                     Log.i("$TAG Opening contact editor for creating new contact")
                     val action =
                         ContactsListFragmentDirections.actionContactsListFragmentToNewContactFragment()
