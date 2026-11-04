@@ -108,9 +108,9 @@ android {
         applicationId = packageName
         minSdk = 28
         targetSdk = 37
-        // BizVoIP's own version, as on iOS: 1.0.1, the first Google Play release (upstream was 6.2.7)
-        versionCode = 100003 // 1.00.001, third build: without Android Auto, which Google Play rejected 100002 for
-        versionName = "1.0.1"
+        // BizVoIP's own version, as on iOS (upstream was 6.2.7); 1.0.1 (100003) was the first Google Play release
+        versionCode = 100004 // 1.00.002: new contacts go into the phone's address book
+        versionName = "1.0.2"
 
         manifestPlaceholders["appAuthRedirectScheme"] = packageName
 
